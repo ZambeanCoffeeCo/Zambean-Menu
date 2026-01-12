@@ -3,133 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zambean Coffee Company | Official Menu</title>
+    <title>Zambean Coffee Company | Menu</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #2c1e14; --accent: #a67c52; --bg: #fffaf5; --text: #333; }
         * { box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; text-align: center; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; text-align: center; }
        
-        /* Header & Top Right Button */
-        header { background: white; padding: 40px 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: relative; }
-        .main-logo { width: 140px; height: auto; margin: 0 auto; display: block; }
-        h1 { font-family: 'Playfair Display', serif; color: var(--primary); margin: 15px 0 0 0; font-size: 1.8rem; }
+        header { background: white; padding: 30px 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .main-logo { width: 120px; height: auto; margin: 0 auto; display: block; }
+        h1 { font-family: 'Playfair Display', serif; color: var(--primary); margin: 10px 0 0 0; font-size: 1.6rem; }
 
         .top-right-btn {
             position: fixed; top: 20px; right: 20px; z-index: 2000;
-            background: var(--primary); color: white; text-decoration: none; padding: 12px 20px;
-            font-size: 0.85rem; font-weight: 600; border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.3s;
+            background: var(--primary); color: white; text-decoration: none; padding: 10px 18px;
+            font-size: 0.8rem; font-weight: 600; border-radius: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        /* Our Story Section */
-        #story { padding: 100px 20px; max-width: 650px; margin: 0 auto; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .category-title { font-family: 'Playfair Display', serif; color: var(--primary); border-bottom: 2px solid var(--accent); display: inline-block; margin-bottom: 20px; font-size: 2.2rem; }
-        .story-text { font-size: 1.2rem; line-height: 2; color: #555; margin-bottom: 40px; font-style: italic; }
+        /* Story Section */
+        #story-page { padding: 60px 20px; max-width: 600px; margin: 0 auto; }
+        .story-text { font-size: 1.1rem; line-height: 1.8; color: #555; font-style: italic; margin-bottom: 30px; }
 
-        /* Menu Navigation Bar */
-        .nav-bar { position: sticky; top: 0; background: white; padding: 15px; z-index: 1000; display: flex; overflow-x: auto; gap: 10px; border-bottom: 1px solid #eee; scrollbar-width: none; }
-        .nav-bar::-webkit-scrollbar { display: none; }
-        .nav-btn { background: #f4ece4; color: var(--primary); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; white-space: nowrap; transition: 0.3s; }
-        .nav-btn:hover { background: var(--primary); color: white; }
+        /* Centered Category Menu */
+        .category-grid {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+            max-width: 600px; margin: 0 auto 40px auto; padding: 0 10px;
+        }
+        .cat-btn {
+            background: white; border: 1px solid var(--accent); color: var(--primary);
+            padding: 10px 20px; border-radius: 25px; font-size: 0.85rem; font-weight: 600;
+            cursor: pointer; transition: 0.3s;
+        }
+        .cat-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-        /* Menu Layout */
-        .menu-container { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
-        section { padding-top: 100px; margin-top: -60px; margin-bottom: 40px; }
-        .menu-item { margin-bottom: 35px; }
-        .item-name { font-weight: 600; font-size: 1.15rem; color: var(--primary); text-transform: uppercase; display: block; }
-        .item-price { font-weight: 600; font-size: 1.15rem; color: var(--accent); margin: 5px 0; display: block; }
-        .description { font-size: 0.95rem; color: #666; line-height: 1.6; max-width: 450px; margin: 0 auto; }
-        .section-tag { font-size: 0.8rem; font-weight: bold; color: var(--accent); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        /* Menu Items Area */
+        .menu-display { max-width: 600px; margin: 0 auto; padding: 20px; min-height: 400px; }
+        .menu-section { display: none; animation: fadeIn 0.4s ease; }
+        .menu-section.active { display: block; }
 
-        /* Contact & Footer */
-        .contact-box { padding: 60px 20px; background: white; }
-        .action-btn { display: block; background: #25D366; color: white; padding: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; margin: 10px auto; max-width: 280px; }
-        footer { padding: 40px; font-size: 0.8rem; color: #888; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .category-title { font-family: 'Playfair Display', serif; color: var(--primary); border-bottom: 2px solid var(--accent); display: inline-block; margin-bottom: 25px; font-size: 2rem; }
+        .menu-item { margin-bottom: 30px; }
+        .item-name { font-weight: 600; font-size: 1.1rem; color: var(--primary); text-transform: uppercase; display: block; }
+        .item-price { font-weight: 600; font-size: 1.1rem; color: var(--accent); margin: 5px 0; display: block; }
+        .description { font-size: 0.9rem; color: #666; line-height: 1.5; max-width: 450px; margin: 0 auto; }
+        .section-tag { font-size: 0.75rem; font-weight: bold; color: var(--accent); margin-bottom: 20px; text-transform: uppercase; }
+
+        /* Contact Section */
+        .contact-footer { padding: 40px 20px; background: white; margin-top: 40px; }
+        .action-btn { display: block; background: #25D366; color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; margin: 10px auto; max-width: 250px; }
+        footer { padding: 30px; font-size: 0.8rem; color: #888; }
     </style>
 </head>
 <body>
 
-    <a href="#menu-start" class="top-right-btn">VIEW MENU</a>
-
-    <header>
+    <header id="top">
         <img src="logo.png" alt="Zambean Logo" class="main-logo">
         <h1>Zambean Coffee Company</h1>
     </header>
 
-    <div id="story">
+    <div id="story-page">
         <h2 class="category-title">Our Story</h2>
-        <p class="story-text">
-            Born from a love for the rich, bold flavors of Zambian coffee, Zambean Coffee Company is a celebration of our heritage. We source the finest beans and pair them with fresh, soul-warming food to create a space where community and culture meet over a perfect cup.
-        </p>
+        <p class="story-text">Born from a love for the rich, bold flavors of Zambian coffee, Zambean Coffee Company is a celebration of our heritage. We source the finest beans and pair them with fresh, soul-warming food to create a space where community and culture meet over a perfect cup.</p>
     </div>
 
-    <div id="menu-start"></div>
-    <nav class="nav-bar">
-        <a href="#breakfast" class="nav-btn">BREAKFAST</a>
-        <a href="#wraps" class="nav-btn">WRAPS</a>
-        <a href="#toasties" class="nav-btn">TOASTIES</a>
-        <a href="#sandwiches" class="nav-btn">SANDWICHES</a>
-        <a href="#burgers" class="nav-btn">BURGERS & PASTA</a>
-        <a href="#dinner" class="nav-btn">LUNCH & DINNER</a>
-        <a href="#salads" class="nav-btn">SALADS</a>
-        <a href="#bakery" class="nav-btn">BAKERY</a>
-        <a href="#kiddos" class="nav-btn">KIDDOS</a>
-        <a href="#drinks" class="nav-btn">DRINKS</a>
-    </nav>
+    <div class="category-grid">
+        <button class="cat-btn active" onclick="openTab(event, 'breakfast')">BREAKFAST</button>
+        <button class="cat-btn" onclick="openTab(event, 'wraps')">WRAPS</button>
+        <button class="cat-btn" onclick="openTab(event, 'sandwiches')">SANDWICHES</button>
+        <button class="cat-btn" onclick="openTab(event, 'burgers')">BURGERS & PASTA</button>
+        <button class="cat-btn" onclick="openTab(event, 'mains')">MAINS</button>
+        <button class="cat-btn" onclick="openTab(event, 'bakery')">BAKERY</button>
+        <button class="cat-btn" onclick="openTab(event, 'kiddos')">KIDDOS</button>
+        <button class="cat-btn" onclick="openTab(event, 'drinks')">DRINKS</button>
+    </div>
 
-    <main class="menu-container">
-        <section id="breakfast">
+    <main class="menu-display">
+       
+        <div id="breakfast" class="menu-section active">
             <h2 class="category-title">Breakfast</h2>
             <div class="menu-item"><span class="item-name">The Full English</span><span class="item-price">K200.00</span><p class="description">Two fried eggs, crispy bacon, fried tomato, pork sausage, baked beans, mushrooms and toast.</p></div>
             <div class="menu-item"><span class="item-name">Avo on Toast</span><span class="item-price">K110.00</span><p class="description">Mashed avo on a piece of whole wheat toast with a fried egg.</p></div>
             <div class="menu-item"><span class="item-name">Blue Cheese Toast</span><span class="item-price">K200.00</span><p class="description">Sliced avo, grilled tomato, fried egg, crumbled blue cheese and crispy bacon on sourdough toast.</p></div>
-            <div class="menu-item"><span class="item-name">Bacon Scrambled Eggs</span><span class="item-price">K185.00</span><p class="description">Creamy scrambled eggs with crispy bacon, mushrooms, avo & fried tomato on a toasted baguette or slice of toast.</p></div>
-            <div class="menu-item"><span class="item-name">Egg & Bacon Roll</span><span class="item-price">K100.00</span><p class="description">Two fried eggs in a fresh, lightly toasted sesame bun with crispy bacon.</p></div>
-            <div class="menu-item"><span class="item-name">Granola & Yoghurt</span><span class="item-price">K135.00</span><p class="description">Homemade granola with Greek yoghurt & berry coulis.</p></div>
-            <div class="menu-item"><span class="item-name">Farmers Breakfast</span><span class="item-price">K195.00</span><p class="description">Two fried eggs, fried tomato, sweet corn fritters, pork sausage and chips.</p></div>
-            <div class="menu-item"><span class="item-name">Breakfast Wrap</span><span class="item-price">K200.00</span><p class="description">Scrambled eggs, sausage, roasted tomato and cheddar.</p></div>
-            <div class="menu-item"><span class="item-name">Eggs Benedict</span><span class="item-price">K195.00</span><p class="description">English muffin, poached egg, with a choice of ham or bacon served with hollandaise sauce.</p></div>
-            <div class="menu-item"><span class="item-name">Eggs Royale</span><span class="item-price">K250.00</span><p class="description">English muffin, poached egg, smoked salmon & hollandaise sauce.</p></div>
-            <div class="menu-item"><span class="item-name">Salmon Sourdough Toast</span><span class="item-price">K260.00</span><p class="description">Smoked salmon, poached eggs and avocado served on sourdough toast.</p></div>
-            <div class="menu-item"><span class="item-name">Vegan Breakfast</span><span class="item-price">K165.00</span><p class="description">Creamy avo, caramelized onions, fried mushrooms, roasted tomato, baked beans served on a toasted baguette.</p></div>
-            <div class="menu-item"><span class="item-name">Omelettes</span><span class="item-price">K130.00</span><p class="description">Three egg omelette with 3 fillings: Mushroom, Cheddar, Tomato, Bacon, Feta, Jalapeño, Ham, Onion, or Avo.</p></div>
-            <div class="menu-item"><span class="item-name">Vanilla French Toast</span><span class="item-price">K120.00</span><p class="description">Made from our homemade bread with crispy bacon, golden syrup and vanilla.</p></div>
-        </section>
+            <div class="menu-item"><span class="item-name">Bacon Scrambled Eggs</span><span class="item-price">K185.00</span><p class="description">Creamy scrambled eggs with crispy bacon, mushrooms, avo & fried tomato on a toasted baguette.</p></div>
+        </div>
 
-        <section id="wraps">
+        <div id="wraps" class="menu-section">
             <h2 class="category-title">Wraps</h2>
-            <div class="section-tag">Sides: Chips or Salad</div>
-            <div class="menu-item"><span class="item-name">Halloumi</span><span class="item-price">K240.00</span><p class="description">Halloumi, avocado, tomato, lettuce, honey mustard mayo.</p></div>
-            <div class="menu-item"><span class="item-name">Chicken and Halloumi</span><span class="item-price">K250.00</span><p class="description">Halloumi, crumbed chicken or bacon, lettuce, avocado, tomato, honey mustard mayo.</p></div>
-            <div class="menu-item"><span class="item-name">Falafel</span><span class="item-price">K240.00</span><p class="description">Falafel, tomato, cucumber, lettuce, tahini yogurt dressing, pickled red onions.</p></div>
+            <p class="section-tag">Sides: Chips or Salad</p>
+            <div class="menu-item"><span class="item-name">Halloumi Wrap</span><span class="item-price">K240.00</span><p class="description">Halloumi, avocado, tomato, lettuce, honey mustard mayo.</p></div>
             <div class="menu-item"><span class="item-name">Chicken Caesar Wrap</span><span class="item-price">K250.00</span><p class="description">Grilled chicken, avocado, tomato, lettuce, caesar dressing.</p></div>
-            <div class="menu-item"><span class="item-name">Smoked Salmon Wrap</span><span class="item-price">K270.00</span><p class="description">Smoked salmon, cream cheese, capers, lettuce, avocado.</p></div>
-        </section>
+        </div>
 
-        <section id="toasties">
-            <h2 class="category-title">Toasties</h2>
-            <div class="section-tag">Sides: Chips or Salad</div>
-            <div class="menu-item"><span class="item-name">Ham and Cheese</span><span class="item-price">K170.00</span></div>
-            <div class="menu-item"><span class="item-name">Chicken Mayo</span><span class="item-price">K170.00</span></div>
-            <div class="menu-item"><span class="item-name">Bacon and Cheese</span><span class="item-price">K170.00</span></div>
-            <div class="menu-item"><span class="item-name">Tuna Mayo</span><span class="item-price">K170.00</span></div>
-            <div class="menu-item"><span class="item-name">Cheese and Tomato</span><span class="item-price">K160.00</span></div>
-            <div class="menu-item"><span class="item-name">Mozzarella, Tomato & Pesto</span><span class="item-price">K165.00</span></div>
-        </section>
-
-        <section id="sandwiches">
+        <div id="sandwiches" class="menu-section">
             <h2 class="category-title">Sandwiches</h2>
-            <div class="section-tag">Sides: Chips or Salad</div>
-            <div class="menu-item"><span class="item-name">Bacon & Avo</span><span class="item-price">K180.00</span></div>
-            <div class="menu-item"><span class="item-name">The Italian</span><span class="item-price">K190.00</span><p class="description">Basil pesto, Italian salami, sundried tomatoes & parmesan.</p></div>
-            <div class="menu-item"><span class="item-name">Smoked Salmon</span><span class="item-price">K255.00</span><p class="description">Smoked salmon, cream cheese, capers & avo.</p></div>
             <div class="menu-item"><span class="item-name">Club Sandwich</span><span class="item-price">K185.00</span><p class="description">Grilled chicken, crispy bacon, lettuce, tomato & honey dijon mayo.</p></div>
-            <div class="menu-item"><span class="item-name">Gourmet BLT</span><span class="item-price">K185.00</span><p class="description">Crispy bacon, lettuce, tomato & lemon mayo.</p></div>
-            <div class="menu-item"><span class="item-name">Crumbed Chicken</span><span class="item-price">K185.00</span><p class="description">Crumbed & fried strips, tomato, feta & lemon dressing.</p></div>
-        </section>
-
-        <section id="burgers">
-            <h2 class="category-title">Burgers & Pasta</h2>
-            <div class="section-tag">Burgers include Chips or Salad</div>
-            <div class="menu-item"><span class="item-name">Beef Burger</span><span class="item-price">
+            <div class="menu-item"><span class="item-name">
