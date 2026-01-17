@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zambean Coffee Company | Updated Official Menu</title>
+    <title>Zambean Coffee Company | Official Full Menu</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #2c1e14; --accent: #a67c52; --bg: #fffaf5; --text: #333; }
@@ -12,10 +12,9 @@
         header { background: white; padding: 40px 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .main-logo { width: 140px; height: auto; margin: 0 auto; display: block; }
         h1 { font-family: 'Playfair Display', serif; color: var(--primary); margin: 15px 0 0 0; font-size: 1.8rem; }
-        .top-right-btn { position: fixed; top: 20px; right: 20px; z-index: 2000; background: var(--primary); color: white; text-decoration: none; padding: 12px 22px; font-size: 0.85rem; font-weight: 600; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: 0.3s; }
+        .top-right-btn { position: fixed; top: 20px; right: 20px; z-index: 2000; background: var(--primary); color: white; text-decoration: none; padding: 12px 22px; font-size: 0.85rem; font-weight: 600; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
         #story-page { padding: 80px 20px; max-width: 650px; margin: 0 auto; min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         .category-title { font-family: 'Playfair Display', serif; color: var(--primary); border-bottom: 2px solid var(--accent); display: inline-block; margin-bottom: 25px; font-size: 2.2rem; }
-        .story-text { font-size: 1.15rem; line-height: 1.9; color: #555; margin-bottom: 30px; font-style: italic; }
         #menu-container { display: none; max-width: 600px; margin: 0 auto; padding: 20px; }
         .category-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 40px; padding: 10px; position: sticky; top: 0; background: var(--bg); z-index: 10; }
         .nav-link { background: #efe4d8; color: var(--primary); text-decoration: none; padding: 8px 15px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
@@ -23,13 +22,10 @@
         .menu-item { margin-bottom: 35px; }
         .item-name { font-weight: 600; font-size: 1.15rem; color: var(--primary); text-transform: uppercase; display: block; }
         .item-price { font-weight: 600; font-size: 1.15rem; color: var(--accent); margin: 5px 0; display: block; }
-        .description { font-size: 0.9rem; color: #666; line-height: 1.5; max-width: 450px; margin: 0 auto; text-transform: lowercase; }
-        .description::first-letter { text-transform: uppercase; }
+        .description { font-size: 0.9rem; color: #666; line-height: 1.5; max-width: 450px; margin: 0 auto; }
         .sides-info { font-size: 0.8rem; font-weight: bold; color: var(--accent); margin-bottom: 25px; text-transform: uppercase; }
         .info-notice { background: #fdf2e9; padding: 25px; border-radius: 15px; margin: 40px auto; border: 1px dashed var(--accent); font-size: 0.95rem; color: var(--primary); }
-        .footer-area { padding: 60px 20px; background: white; border-top: 1px solid #eee; }
         .btn-action { display: block; background: #25D366; color: white; padding: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; margin: 10px auto; max-width: 280px; }
-        footer { padding: 40px; font-size: 0.8rem; color: #888; }
     </style>
 </head>
 <body>
@@ -43,7 +39,7 @@
 
     <div id="story-page">
         <h2 class="category-title">Our Story</h2>
-        <p class="story-text">
+        <p style="font-size: 1.15rem; line-height: 1.9; color: #555; margin-bottom: 30px; font-style: italic;">
             Born from a love for the rich flavors of Zambian coffee, Zambean Coffee Company is a celebration of our heritage. We pair the finest beans with soul-warming food to create a space where community meets over a perfect cup.
         </p>
     </div>
@@ -53,10 +49,11 @@
             <a href="#breakfast" class="nav-link">BREAKFAST</a>
             <a href="#wraps" class="nav-link">WRAPS & TOASTIES</a>
             <a href="#sandwiches" class="nav-link">SANDWICHES</a>
-            <a href="#burgers" class="nav-link">BURGERS</a>
-            <a href="#mains" class="nav-link">MAINS</a>
+            <a href="#burgers" class="nav-link">BURGERS & PASTA</a>
+            <a href="#mains" class="nav-link">LUNCH & DINNER</a>
             <a href="#salads" class="nav-link">SALADS</a>
             <a href="#bakery" class="nav-link">BAKERY</a>
+            <a href="#kiddos" class="nav-link">KIDDOS</a>
             <a href="#drinks" class="nav-link">DRINKS</a>
         </nav>
 
@@ -67,100 +64,158 @@
 
         <section id="breakfast">
             <h2 class="category-title">Breakfast</h2>
-            <div class="menu-item"><span class="item-name">The Full English</span><span class="item-price">K200.00</span><p class="description">Two fried eggs, crispy bacon, fried tomato, pork sausage, baked beans, mushrooms and toast.</p></div>
-            <div class="menu-item"><span class="item-name">Avo on Toast</span><span class="item-price">K110.00</span><p class="description">Mashed avo on a piece of whole wheat toast with a fried egg.</p></div>
-            <div class="menu-item"><span class="item-name">Blue Cheese Toast</span><span class="item-price">K200.00</span><p class="description">Sliced avo, grilled tomato, fried egg, crumbled blue cheese and crispy bacon on sourdough toast.</p></div>
-            <div class="menu-item"><span class="item-name">Bacon Scrambled Eggs</span><span class="item-price">K185.00</span><p class="description">Creamy scrambled eggs with crispy bacon, mushrooms, avo & fried tomato on a toasted baguette or slice of toast.</p></div>
-            <div class="menu-item"><span class="item-name">Egg & Bacon Roll</span><span class="item-price">K100.00</span><p class="description">Two fried eggs in a fresh sesame bun with crispy bacon.</p></div>
-            <div class="menu-item"><span class="item-name">Granola & Yoghurt</span><span class="item-price">K135.00</span><p class="description">Homemade granola with Greek yoghurt & berry coulis.</p></div>
-            <div class="menu-item"><span class="item-name">Farmers Breakfast</span><span class="item-price">K195.00</span><p class="description">Two fried eggs, fried tomato, sweet corn fritters, pork sausage and chips.</p></div>
-            <div class="menu-item"><span class="item-name">Breakfast Wrap</span><span class="item-price">K200.00</span><p class="description">Scrambled eggs, sausage, roasted tomato and cheddar.</p></div>
-            <div class="menu-item"><span class="item-name">Eggs Benedict</span><span class="item-price">K195.00</span><p class="description">English muffin, poached egg, with a choice of ham or bacon served with hollandaise sauce.</p></div>
-            <div class="menu-item"><span class="item-name">Eggs Royale</span><span class="item-price">K250.00</span><p class="description">English muffin, poached egg, smoked salmon & hollandaise sauce.</p></div>
-            <div class="menu-item"><span class="item-name">Salmon Sourdough Toast</span><span class="item-price">K260.00</span><p class="description">Smoked salmon, poached eggs and avocado served on sourdough toast.</p></div>
-            <div class="menu-item"><span class="item-name">Vegan Breakfast</span><span class="item-price">K165.00</span><p class="description">Creamy avo, caramelized onions, fried mushrooms, roasted tomato, baked beans on a toasted baguette.</p></div>
-            <div class="menu-item"><span class="item-name">Breakfast Croissant</span><span class="item-price">K185.00</span><p class="description">Creamy scrambled eggs, with crispy bacon, tomato on a fresh baked butter croissant.</p></div>
-            <div class="menu-item"><span class="item-name">Salmon Scrambled Eggs</span><span class="item-price">K250.00</span><p class="description">Scrambled eggs with smoked salmon, mushrooms, avo, fried tomato on a toasted baguette or slice of toast.</p></div>
-            <div class="menu-item"><span class="item-name">Omelettes</span><span class="item-price">K130.00</span><p class="description">Three egg omelette with 3 fillings: Mushroom, Cheddar, Tomato, Bacon, Feta, Jalapeño, Ham, Onion, or Avo.</p></div>
-            <div class="menu-item"><span class="item-name">Vanilla French Toast</span><span class="item-price">K120.00</span><p class="description">French toast made from our homemade bread served with crispy bacon, golden syrup and a touch of vanilla.</p></div>
+            [cite_start]<div class="menu-item"><span class="item-name">The Full English</span><span class="item-price">K200.00</span><p class="description">Two fried eggs, crispy bacon, fried tomato, pork sausage, baked beans, mushrooms and toast[span_0](end_span).</p></div>
+            [span_1](start_span)<div class="menu-item"><span class="item-name">Avo on Toast</span><span class="item-price">K110.00</span><p class="description">Mashed avo on a piece of whole wheat toast with a fried egg[span_1](end_span).</p></div>
+            [span_2](start_span)<div class="menu-item"><span class="item-name">Blue Cheese Toast</span><span class="item-price">K200.00</span><p class="description">Sliced avo, grilled tomato, fried egg, crumbled blue cheese and crispy bacon on sourdough toast[span_2](end_span).</p></div>
+            [span_3](start_span)<div class="menu-item"><span class="item-name">Bacon Scrambled Eggs</span><span class="item-price">K185.00</span><p class="description">Creamy scrambled eggs with crispy bacon, mushrooms, avo & fried tomato on a toasted baguette or slice of toast[span_3](end_span).</p></div>
+            [span_4](start_span)<div class="menu-item"><span class="item-name">Egg & Bacon Roll</span><span class="item-price">K100.00</span><p class="description">Two fried eggs in a fresh sesame bun with crispy bacon[span_4](end_span).</p></div>
+            [span_5](start_span)<div class="menu-item"><span class="item-name">Granola & Yoghurt</span><span class="item-price">K135.00</span><p class="description">Homemade granola with Greek yoghurt & berry coulis[span_5](end_span).</p></div>
+            [span_6](start_span)<div class="menu-item"><span class="item-name">Farmers Breakfast</span><span class="item-price">K195.00</span><p class="description">Two fried eggs, fried tomato, sweet corn fritters, pork sausage and chips[span_6](end_span).</p></div>
+            [span_7](start_span)<div class="menu-item"><span class="item-name">Breakfast Wrap</span><span class="item-price">K200.00</span><p class="description">Scrambled eggs, sausage, roasted tomato and cheddar[span_7](end_span).</p></div>
+            [span_8](start_span)<div class="menu-item"><span class="item-name">Eggs Benedict</span><span class="item-price">K195.00</span><p class="description">English muffin, poached egg, with a choice of ham or bacon served with & hollandaise sauce[span_8](end_span).</p></div>
+            [span_9](start_span)<div class="menu-item"><span class="item-name">Eggs Royale</span><span class="item-price">K250.00</span><p class="description">English muffin, poached egg, smoked salmon & hollandaise sauce[span_9](end_span).</p></div>
+            [span_10](start_span)<div class="menu-item"><span class="item-name">Salmon Sourdough Toast</span><span class="item-price">K260.00</span><p class="description">Smoked salmon, poached eggs and avocado on sourdough toast[span_10](end_span).</p></div>
+            [span_11](start_span)<div class="menu-item"><span class="item-name">Vegan Breakfast</span><span class="item-price">K165.00</span><p class="description">Creamy avo, caramelized onions, fried mushrooms, roasted tomato, baked beans on a toasted baguette[span_11](end_span).</p></div>
+            [span_12](start_span)<div class="menu-item"><span class="item-name">Breakfast Croissant</span><span class="item-price">K185.00</span><p class="description">Creamy scrambled eggs, with crispy bacon, tomato on a fresh baked butter croissant[span_12](end_span).</p></div>
+            [span_13](start_span)<div class="menu-item"><span class="item-name">Salmon Scrambled Eggs</span><span class="item-price">K250.00</span><p class="description">Scrambled eggs with smoked salmon, mushrooms, avo, fried tomato on toasted baguette[span_13](end_span).</p></div>
+            [span_14](start_span)<div class="menu-item"><span class="item-name">Omelettes</span><span class="item-price">K130.00</span><p class="description">Three eggs with choice of: Mushroom, Cheddar, Tomato, Bacon, Feta, Jalapeño, Ham, Onion, or Avo[span_14](end_span).</p></div>
+            [span_15](start_span)<div class="menu-item"><span class="item-name">Vanilla French Toast</span><span class="item-price">K120.00</span><p class="description">Homemade bread, crispy bacon, golden syrup and a touch of vanilla[span_15](end_span).</p></div>
         </section>
 
         <section id="wraps">
             <h2 class="category-title">Wraps & Toasties</h2>
-            <p class="sides-info">(SIDES: CHIPS OR SALAD)</p>
-            <div class="menu-item"><span class="item-name">Halloumi Wrap</span><span class="item-price">K240.00</span><p class="description">Halloumi, avocado, tomato, lettuce, honey mustard mayo.</p></div>
-            <div class="menu-item"><span class="item-name">Chicken and Halloumi Wrap</span><span class="item-price">K250.00</span><p class="description">Halloumi, crumbed chicken or bacon, lettuce, avocado, tomato, honey mustard mayo.</p></div>
-            <div class="menu-item"><span class="item-name">Falafel Wrap</span><span class="item-price">K240.00</span><p class="description">Falafel, tomato, cucumber, lettuce, tahini yogurt dressing, pickled red onions.</p></div>
-            <div class="menu-item"><span class="item-name">Chicken Caesar Wrap</span><span class="item-price">K250.00</span><p class="description">Grilled chicken, avocado, tomato, lettuce, caesar dressing.</p></div>
-            <div class="menu-item"><span class="item-name">Smoked Salmon Wrap</span><span class="item-price">K270.00</span><p class="description">Smoked salmon, cream cheese, capers, lettuce, avocado.</p></div>
-            <div class="menu-item"><span class="item-name">Ham & Cheese Toastie</span><span class="item-price">K170.00</span></div>
+            [span_16](start_span)<p class="sides-info">(SIDES: CHIPS OR SALAD)[span_16](end_span)</p>
+            [span_17](start_span)<div class="menu-item"><span class="item-name">Halloumi Wrap</span><span class="item-price">K240.00</span><p class="description">Halloumi, avocado, tomato, lettuce, honey mustard mayo[span_17](end_span).</p></div>
+            [span_18](start_span)<div class="menu-item"><span class="item-name">Chicken and Halloumi Wrap</span><span class="item-price">K250.00</span><p class="description">Halloumi, crumbed chicken or bacon, lettuce, avocado, tomato, honey mustard mayo[span_18](end_span).</p></div>
+            [span_19](start_span)<div class="menu-item"><span class="item-name">Falafel Wrap</span><span class="item-price">K240.00</span><p class="description">Falafel, tomato, cucumber, lettuce, tahini yogurt dressing, pickled red onions[span_19](end_span).</p></div>
+            [span_20](start_span)<div class="menu-item"><span class="item-name">Chicken Caesar Wrap</span><span class="item-price">K250.00</span><p class="description">Grilled chicken, avocado, tomato, lettuce, caesar dressing[span_20](end_span).</p></div>
+            [span_21](start_span)<div class="menu-item"><span class="item-name">Smoked Salmon Wrap</span><span class="item-price">K270.00</span><p class="description">Smoked salmon, cream cheese, capers, lettuce, avocado[span_21](end_span).</p></div>
+            <div class="menu-item"><span class="item-name">Ham and Cheese Toastie</span><span class="item-price">K170.00</span></div>
             <div class="menu-item"><span class="item-name">Chicken Mayo Toastie</span><span class="item-price">K170.00</span></div>
-            <div class="menu-item"><span class="item-name">Bacon & Cheese Toastie</span><span class="item-price">K170.00</span></div>
+            <div class="menu-item"><span class="item-name">Bacon and Cheese Toastie</span><span class="item-price">K170.00</span></div>
             <div class="menu-item"><span class="item-name">Tuna Mayo Toastie</span><span class="item-price">K170.00</span></div>
-            <div class="menu-item"><span class="item-name">Mozzarella, Tomato & Pesto Toastie</span><span class="item-price">K165.00</span></div>
+            <div class="menu-item"><span class="item-name">Cheese and Tomato Toastie</span><span class="item-price">K160.00</span></div>
+            [span_22](start_span)<div class="menu-item"><span class="item-name">Mozzarella, Tomato & Pesto Toastie</span><span class="item-price">K165.00</span>[span_22](end_span)</div>
         </section>
 
         <section id="sandwiches">
             <h2 class="category-title">Sandwiches</h2>
-            <p class="sides-info">(SIDES: CHIPS OR SALAD)</p>
-            <div class="menu-item"><span class="item-name">Bacon & Avo</span><span class="item-price">K180.00</span><p class="description">Lettuce, bacon & avo.</p></div>
-            <div class="menu-item"><span class="item-name">The Italian</span><span class="item-price">K190.00</span><p class="description">Homemade basil pesto, Italian salami, sundried tomatoes, & parmesan shavings.</p></div>
-            <div class="menu-item"><span class="item-name">Smoked Salmon</span><span class="item-price">K255.00</span><p class="description">Smooth cream cheese, smoked salmon, capers & avo.</p></div>
-            <div class="menu-item"><span class="item-name">Club Sandwich</span><span class="item-price">K185.00</span><p class="description">Grilled chicken, crispy bacon, lettuce, tomato & honey dijon mayo.</p></div>
-            <div class="menu-item"><span class="item-name">Crumbed Chicken</span><span class="item-price">K185.00</span><p class="description">Crumbed & fried chicken strips, tomato, feta & lemon dressing.</p></div>
+            [span_23](start_span)<p class="sides-info">(SIDES: CHIPS OR SALAD)[span_23](end_span)</p>
+            [span_24](start_span)<div class="menu-item"><span class="item-name">Bacon & Avo</span><span class="item-price">K180.00</span><p class="description">Lettuce, bacon & avo[span_24](end_span).</p></div>
+            [span_25](start_span)<div class="menu-item"><span class="item-name">The Italian</span><span class="item-price">K190.00</span><p class="description">Basil pesto, Italian salami, sundried tomatoes, & parmesan[span_25](end_span).</p></div>
+            [span_26](start_span)<div class="menu-item"><span class="item-name">Smoked Salmon</span><span class="item-price">K255.00</span><p class="description">Cream cheese, smoked salmon, capers & avo[span_26](end_span).</p></div>
+            [span_27](start_span)<div class="menu-item"><span class="item-name">Vegetarian</span><span class="item-price">K180.00</span><p class="description">Lettuce, basil pesto, sundried tomatoes & avo[span_27](end_span).</p></div>
+            [span_28](start_span)<div class="menu-item"><span class="item-name">Club Sandwich</span><span class="item-price">K185.00</span><p class="description">Grilled chicken, bacon, lettuce, tomato & honey dijon mayo[span_28](end_span).</p></div>
+            [span_29](start_span)<div class="menu-item"><span class="item-name">Grilled Chicken & Pesto</span><span class="item-price">K185.00</span><p class="description">Tossed in yogurt & pesto sauce with tomato, mozzarella & lettuce[span_29](end_span).</p></div>
+            [span_30](start_span)<div class="menu-item"><span class="item-name">Smoked Chicken</span><span class="item-price">K185.00</span><p class="description">Lettuce, honey wholegrain mustard, pecan nuts & avo[span_30](end_span).</p></div>
+            [span_31](start_span)<div class="menu-item"><span class="item-name">Gourmet BLT</span><span class="item-price">K185.00</span><p class="description">Bacon, lettuce, tomato & homemade lemon mayo[span_31](end_span).</p></div>
+            [span_32](start_span)<div class="menu-item"><span class="item-name">Crumbed Chicken</span><span class="item-price">K185.00</span><p class="description">Fried chicken strips, tomato, feta & lemon dressing[span_32](end_span).</p></div>
         </section>
 
         <section id="burgers">
             <h2 class="category-title">Burgers & Pasta</h2>
-            <p class="sides-info">(SIDES: CHIPS OR SALAD)</p>
-            <div class="menu-item"><span class="item-name">Beef Burger</span><span class="item-price">K250.00</span><p class="description">Beef patty, tomato, caramelized onions, lettuce, gherkins and halloumi topper.</p></div>
-            <div class="menu-item"><span class="item-name">Chicken Burger</span><span class="item-price">K250.00</span><p class="description">Crispy coated chicken, tomato, gherkins, sweet chilli, avo and lettuce.</p></div>
+            [span_33](start_span)<p class="sides-info">(SIDES: CHIPS OR SALAD)[span_33](end_span)</p>
+            [span_34](start_span)<div class="menu-item"><span class="item-name">Beef Burger</span><span class="item-price">K250.00</span><p class="description">Beef patty, tomato, caramelized onions, lettuce, gherkins & halloumi topper[span_34](end_span).</p></div>
+            [span_35](start_span)<div class="menu-item"><span class="item-name">Chicken Burger</span><span class="item-price">K250.00</span><p class="description">Crispy coated chicken, tomato, gherkins, sweet chilli, avo & lettuce[span_35](end_span).</p></div>
+            [span_36](start_span)<div class="menu-item"><span class="item-name">Halloumi Burger</span><span class="item-price">K220.00</span><p class="description">Crispy coated halloumi, sweet chilli, lettuce & avo[span_36](end_span).</p></div>
+            [span_37](start_span)<div class="menu-item"><span class="item-name">Bacon & Blue Cheese Burger</span><span class="item-price">K250.00</span><p class="description">Beef patty, bacon, blue cheese sauce, tomato and lettuce[span_37](end_span).</p></div>
             <div class="menu-item"><span class="item-name">Beef Bolognese Tagliatelle</span><span class="item-price">K230.00</span></div>
             <div class="menu-item"><span class="item-name">Creamy Artichoke Pasta</span><span class="item-price">K250.00</span></div>
+            [span_38](start_span)<div class="menu-item"><span class="item-name">Pomodoro Pasta</span><span class="item-price">K200.00</span>[span_38](end_span)</div>
         </section>
 
         <section id="mains">
             <h2 class="category-title">Lunch & Dinner</h2>
-            <p class="sides-info">(SIDES: CHIPS, SALAD, OR MASH WITH VEG)</p>
-            <div class="menu-item"><span class="item-name">Beer Battered Fish Fillet</span><span class="item-price">K320.00</span><p class="description">Served with homemade tartar sauce.</p></div>
-            <div class="menu-item"><span class="item-name">T-Bone Steak</span><span class="item-price">K320.00</span><p class="description">Served with homemade mushroom sauce.</p></div>
-            <div class="menu-item"><span class="item-name">Beef Fillet</span><span class="item-price">K340.00</span><p class="description">Served with homemade pepper sauce.</p></div>
+            [span_39](start_span)<p class="sides-info">(SIDES: CHIPS, SALAD, OR MASH WITH CARROTS & MUSHY PEAS)[span_39](end_span)</p>
+            [span_40](start_span)<div class="menu-item"><span class="item-name">Beer Battered Fish Fillet</span><span class="item-price">K320.00</span><p class="description">Served with homemade tartar sauce[span_40](end_span).</p></div>
+            <div class="menu-item"><span class="item-name">Chicken Strips with Sweet Chilli</span><span class="item-price">K220.00</span></div>
+            [span_41](start_span)<div class="menu-item"><span class="item-name">T-Bone</span><span class="item-price">K320.00</span><p class="description">Served with mushroom sauce[span_41](end_span).</p></div>
+            [span_42](start_span)<div class="menu-item"><span class="item-name">Beef Fillet</span><span class="item-price">K340.00</span><p class="description">Served with pepper sauce[span_42](end_span).</p></div>
+            [span_43](start_span)<div class="menu-item"><span class="item-name">Chicken Schnitzel</span><span class="item-price">K240.00</span><p class="description">Served with cheese sauce[span_43](end_span).</p></div>
         </section>
 
         <section id="salads">
             <h2 class="category-title">Salads</h2>
-            <div class="menu-item"><span class="item-name">Smoked Chicken Salad</span><span class="item-price">K195.00</span><p class="description">Sliced smoked chicken, honey mustard, feta, pecan nuts & avo with pumpkin & sunflower seeds.</p></div>
-            <div class="menu-item"><span class="item-name">Smoked Salmon Salad</span><span class="item-price">K270.00</span><p class="description">Thinly sliced salmon, capers, feta & avo with pumpkin & sunflower seeds.</p></div>
-            <div class="menu-item"><span class="item-name">Artichoke Salad</span><span class="item-price">K250.00</span><p class="description">Marinated artichoke hearts, croutons, parmesan & caesar dressing.</p></div>
+            [span_44](start_span)<div class="menu-item"><span class="item-name">Smoked Chicken Salad</span><span class="item-price">K195.00</span><p class="description">Smoked chicken, honey mustard, feta, pecan nuts & avo with pumpkin & sunflower seeds[span_44](end_span).</p></div>
+            [span_45](start_span)<div class="menu-item"><span class="item-name">Garden Salad</span><span class="item-price">K175.00</span><p class="description">Lettuce, sundried tomatoes, feta, pecan nuts & avo with pumpkin & sunflower seeds[span_45](end_span).</p></div>
+            [span_46](start_span)<div class="menu-item"><span class="item-name">Smoked Salmon Salad</span><span class="item-price">K270.00</span><p class="description">Salmon, capers, feta & avo with pumpkin & sunflower seeds[span_46](end_span).</p></div>
+            [span_47](start_span)<div class="menu-item"><span class="item-name">Bacon & Avo Salad</span><span class="item-price">K185.00</span><p class="description">Crispy bacon, feta & avo with pumpkin & sunflower seeds[span_47](end_span).</p></div>
+            [span_48](start_span)<div class="menu-item"><span class="item-name">Artichoke Salad</span><span class="item-price">K250.00</span><p class="description">Artichoke hearts, croutons, parmesan & caesar dressing[span_48](end_span).</p></div>
+            [span_49](start_span)<div class="menu-item"><span class="item-name">Crumbed Chicken Salad</span><span class="item-price">K190.00</span><p class="description">Fried chicken strips, lemon dressing, feta, lettuce & tomato[span_49](end_span).</p></div>
         </section>
 
         <section id="bakery">
-            <h2 class="category-title">Bakery</h2>
+            <h2 class="category-title">Cakes & Croissants</h2>
             <div class="menu-item"><span class="item-name">Carrot Cake Muffin</span><span class="item-price">K95.00</span></div>
+            <div class="menu-item"><span class="item-name">Chocolate Brownie</span><span class="item-price">K75.00</span></div>
+            <div class="menu-item"><span class="item-name">Hazelnut Brownie</span><span class="item-price">K85.00</span></div>
+            <div class="menu-item"><span class="item-name">Banana & Choc Chip Muffin</span><span class="item-price">K80.00</span></div>
+            <div class="menu-item"><span class="item-name">Blueberry & Lemon Muffin</span><span class="item-price">K75.00</span></div>
             <div class="menu-item"><span class="item-name">Date Slice</span><span class="item-price">K75.00</span></div>
+            <div class="menu-item"><span class="item-name">Plain Butter Croissant</span><span class="item-price">K85.00</span></div>
+            <div class="menu-item"><span class="item-name">Butter & Honey Croissant</span><span class="item-price">K100.00</span></div>
             <div class="menu-item"><span class="item-name">Nutella Croissant</span><span class="item-price">K100.00</span></div>
-            <div class="menu-item"><span class="item-name">Double Chocolate Muffin</span><span class="item-price">K100.00</span></div>
+            <div class="menu-item"><span class="item-name">Jam & Cheese Croissant</span><span class="item-price">K100.00</span></div>
+            [span_50](start_span)<div class="menu-item"><span class="item-name">Double Chocolate Muffin</span><span class="item-price">K100.00</span>[span_50](end_span)</div>
+        </section>
+
+        <section id="kiddos">
+            <h2 class="category-title">Kiddos</h2>
+            [span_51](start_span)<div class="menu-item"><span class="item-name">Chicken Strips & Chips</span><span class="item-price">K110.00</span><p class="description">Served with mashed avo[span_51](end_span).</p></div>
+            [span_52](start_span)<div class="menu-item"><span class="item-name">Fish Cakes & Chips</span><span class="item-price">K120.00</span><p class="description">Served with mushy peas[span_52](end_span).</p></div>
+            [span_53](start_span)<div class="menu-item"><span class="item-name">Beef Bolognese</span><span class="item-price">K140.00</span><p class="description">Option to substitute parmesan with cheddar[span_53](end_span).</p></div>
+            <div class="menu-item"><span class="item-name">Creamy Corn Mac N Cheese</span><span class="item-price">K140.00</span></div>
+            <div class="menu-item"><span class="item-name">Add Bacon Bits or Peas</span><span class="item-price">K25.00</span></div>
+            <div class="menu-item"><span class="item-name">Full Portion Chips</span><span class="item-price">K95.00</span></div>
+            [span_54](start_span)<div class="menu-item"><span class="item-name">Half Portion Chips</span><span class="item-price">K75.00</span>[span_54](end_span)</div>
         </section>
 
         <section id="drinks">
-            <h2 class="category-title">Drinks</h2>
+            <h2 class="category-title">Hot Drinks</h2>
             <div class="menu-item"><span class="item-name">Cappuccino</span><span class="item-price">K65.00</span></div>
+            <div class="menu-item"><span class="item-name">Espresso</span><span class="item-price">K45.00</span></div>
+            <div class="menu-item"><span class="item-name">Americano</span><span class="item-price">K55.00</span></div>
+            <div class="menu-item"><span class="item-name">Hot Chocolate</span><span class="item-price">K75.00</span></div>
+            <div class="menu-item"><span class="item-name">Café Latte</span><span class="item-price">K65.00</span></div>
+            <div class="menu-item"><span class="item-name">Macchiato</span><span class="item-price">K50.00</span></div>
+            <div class="menu-item"><span class="item-name">Moccachino</span><span class="item-price">K85.00</span></div>
+            <div class="menu-item"><span class="item-name">Milo</span><span class="item-price">K65.00</span></div>
+            <div class="menu-item"><span class="item-name">Flat White</span><span class="item-price">K65.00</span></div>
+            <div class="menu-item"><span class="item-name">French Press</span><span class="item-price">K80.00</span></div>
+            <div class="menu-item"><span class="item-name">Flavored Syrups</span><span class="item-price">K35.00</span></div>
+
+            <h2 class="category-title">Cold Drinks</h2>
             <div class="menu-item"><span class="item-name">Iced Coffee</span><span class="item-price">K95.00</span></div>
+            <div class="menu-item"><span class="item-name">Milkshake</span><span class="item-price">K95.00</span></div>
             <div class="menu-item"><span class="item-name">Protein Smoothie</span><span class="item-price">K120.00</span></div>
+            <div class="menu-item"><span class="item-name">Mixed Fruit Smoothie</span><span class="item-price">K110.00</span></div>
+            <div class="menu-item"><span class="item-name">Soft Drinks</span><span class="item-price">K40.00</span></div>
+            <div class="menu-item"><span class="item-name">Homemade Juice</span><span class="item-price">K65.00</span></div>
+
+            <h2 class="category-title">Teas</h2>
+            <div class="menu-item"><span class="item-name">Red Cappuccino</span><span class="item-price">K95.00</span></div>
+            <div class="menu-item"><span class="item-name">Iced Tea</span><span class="item-price">K95.00</span></div>
+            <div class="menu-item"><span class="item-name">Leaf Teas</span><span class="item-price">K75.00</span></div>
+
+            <h2 class="category-title">Cocktails & Wine</h2>
             <div class="menu-item"><span class="item-name">Aperol Spritz</span><span class="item-price">K185.00</span></div>
+            <div class="menu-item"><span class="item-name">Dom Pedro</span><span class="item-price">K180.00</span></div>
             <div class="menu-item"><span class="item-name">Sauvignon Blanc</span><span class="item-price">K120.00</span></div>
             <div class="menu-item"><span class="item-name">Local Beers</span><span class="item-price">K45.00</span></div>
+            <div class="menu-item"><span class="item-name">Imported Beers / Ciders</span><span class="item-price">K65.00</span></div>
         </section>
 
-        <div class="footer-area">
-            <h2 class="category-title">Find Us</h2>
+        <div class="info-notice">
+            <h2 class="category-title" style="font-size:1.5rem">Find Us</h2>
             <a href="https://share.google/LMqeOnVObYL5kBxla" target="_blank" class="btn-action" style="background:var(--accent);">📍 Google Maps</a>
             <a href="tel:0777793007" class="btn-action">📞 Call Us</a>
             <a href="https://wa.me/260777793007" class="btn-action" style="background:#25D366;">💬 WhatsApp</a>
         </div>
     </div>
 
-    <footer><p>© 2026 Zambean Coffee Company | Lusaka, Zambia</p></footer>
+    <footer style="padding: 40px; font-size: 0.8rem; color: #888;">
+        <p>© 2026 Zambean Coffee Company | Lusaka, Zambia</p>
+    </footer>
 
     <script>
         function toggleView() {
