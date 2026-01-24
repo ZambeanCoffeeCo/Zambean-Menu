@@ -3,70 +3,496 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Zambean Coffee Co. | Garden Sanctuary Lusaka</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Zambean Coffee Co.</title>
+    <style>
+        /* --- GLOBAL STYLES --- */
+        :root {
+            --primary-brown: #4E342E;
+            --accent-green: #558B2F;
+            --bg-cream: #FFF3E0;
+            --text-dark: #212121;
+            --white: #ffffff;
+            --border-color: #D7CCC8;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* --- HERO SECTION --- */
+        header {
+            background-color: var(--primary-brown);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            font-weight: 300;
+        }
+
+        /* --- CONTACT BANNER --- */
+        .info-bar {
+            background-color: var(--accent-green);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .info-bar a {
+            font-weight: bold;
+            border-bottom: 1px dashed white;
+        }
+
+        .info-bar a:hover {
+            border-bottom: 1px solid white;
+        }
+
+        /* --- MENU CONTAINER --- */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h2.section-title {
+            text-align: center;
+            color: var(--primary-brown);
+            border-bottom: 2px solid var(--primary-brown);
+            padding-bottom: 10px;
+            margin-top: 3rem;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- MENU GRID --- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 600px) {
+            .menu-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .menu-item {
+            background: var(--white);
+            padding: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent-green);
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px dotted var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        .item-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary-brown);
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: var(--accent-green);
+            white-space: nowrap;
+        }
+
+        .item-desc {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* --- SIMPLE LISTS (Drinks) --- */
+        .drink-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .drink-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-brown);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-green);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <div class="header-container">
-            <img src="logo.png" alt="Zambean Logo" class="logo">
-            <nav>
-                <a href="#menu">Menu</a>
-                <a href="#visit">Visit</a>
-                <a href="https://wa.me/260777793007" class="nav-wa" target="_blank">WhatsApp</a>
-            </nav>
-        </div>
+        <h1>Zambean Coffee Co.</h1>
+        <p>Leopards Hill Business Park, Lusaka</p>
     </header>
 
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Expertly Roasted. Peacefully Brewed.</h1>
-            <p>Your sanctuary for specialty coffee at Leopards Hill Business Park.</p>
-        </div>
-    </section>
+    <div class="info-bar">
+        <span>🕒 Open Daily: 07:30 - 17:00</span>
+        <a href="https://www.google.com/maps/place/zambean/data=!4m2!3m1!1s0x19408b56955614d7:0x2c0db87a993b180e?sa=X&ved=1t:242&ictx=111" target="_blank">📍 View on Map</a>
+        <a href="https://wa.me/260777793007" target="_blank">💬 WhatsApp Us</a>
+    </div>
 
-    <section id="menu">
-        <h2>From the Jan 2026 Menu</h2>
+    <div class="container">
+
+        <h2 class="section-title">Breakfast Menu</h2>
+        <p class="subtitle">Served 07:30 – 12:00</p>
         
         <div class="menu-grid">
             <div class="menu-item">
-                <h3>The Full English — K200</h3>
-                <p>2 fried eggs, crispy bacon, tomato, pork sausage, beans, mushrooms & toast.</p>
+                <div class="menu-header">
+                    <span class="item-name">The Full English</span>
+                    <span class="item-price">200.00</span>
+                </div>
+                <div class="item-desc">Two fried eggs, crispy bacon, fried tomato, pork sausage, baked beans, mushrooms and toast.</div>
             </div>
+
             <div class="menu-item">
-                <h3>Salmon Scrambled — K260</h3>
-                <p>Mashed avo on whole wheat toast with creamy salmon scrambled eggs.</p>
+                <div class="menu-header">
+                    <span class="item-name">Poached Egg & Avo</span>
+                    <span class="item-price">110.00</span>
+                </div>
+                <div class="item-desc">Mashed avo on toast with a poached egg.</div>
             </div>
+
             <div class="menu-item">
-                <h3>Kiddos Mac n Cheese — K120</h3>
-                <p>Creamy Mac n Cheese (Add bacon bits for +K25).</p>
+                <div class="menu-header">
+                    <span class="item-name">Blue Cheese Toast</span>
+                    <span class="item-price">200.00</span>
+                </div>
+                <div class="item-desc">Sliced avo, grilled tomato, fried egg, crumbled blue cheese and crispy bacon on sourdough toast.</div>
             </div>
+
             <div class="menu-item">
-                <h3>Blue Cheese Toast — K200</h3>
-                <p>Avo, grilled tomato, egg, blue cheese & bacon on sourdough.</p>
+                <div class="menu-header">
+                    <span class="item-name">Bacon Scrambled Eggs</span>
+                    <span class="item-price">185.00</span>
+                </div>
+                <div class="item-desc">Creamy scrambled eggs with crispy bacon, mushrooms, avo with fried tomato on a toasted baguette.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Bacon & Egg Roll</span>
+                    <span class="item-price">100.00</span>
+                </div>
+                <div class="item-desc">Two fried eggs in a fresh, lightly toasted sesame bun with crispy bacon.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Granola & Yoghurt</span>
+                    <span class="item-price">135.00</span>
+                </div>
+                <div class="item-desc">Homemade granola with Greek yoghurt with fresh seasonal fruit.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Farmer's Breakfast</span>
+                    <span class="item-price">200.00</span>
+                </div>
+                <div class="item-desc">Two fried eggs, fried tomato, sweetcorn fritters, pork sausage and chips.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Vegan Breakfast</span>
+                    <span class="item-price">170.00</span>
+                </div>
+                <div class="item-desc">Creamy avo, caramelized onions, fried mushrooms, roasted tomato and baked beans served on a toasted baguette.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Breakfast Croissant</span>
+                    <span class="item-price">185.00</span>
+                </div>
+                <div class="item-desc">Creamy scrambled eggs with crispy bacon, fried tomato on a freshly baked butter croissant.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Salmon Scrambled Eggs</span>
+                    <span class="item-price">260.00</span>
+                </div>
+                <div class="item-desc">Mashed avo on whole wheat toast with a fried egg.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Omelettes</span>
+                    <span class="item-price">135.00</span>
+                </div>
+                <div class="item-desc">Three egg omelette with 3 fillings: mushroom, cheddar, tomato, bacon, feta, jalapeno, ham, onion, avo.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Vanilla French Toast</span>
+                    <span class="item-price">130.00</span>
+                </div>
+                <div class="item-desc">Homemade bread served with crispy bacon, golden syrup and a touch of vanilla.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Breakfast Wrap</span>
+                    <span class="item-price">200.00</span>
+                </div>
+                <div class="item-desc">Scrambled eggs, sausage, roasted tomato and cheddar.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Eggs Benedict</span>
+                    <span class="item-price">195.00</span>
+                </div>
+                <div class="item-desc">English Muffin, poached egg with a choice of ham or bacon served with Hollandaise sauce.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Eggs Royale</span>
+                    <span class="item-price">250.00</span>
+                </div>
+                <div class="item-desc">English Muffin, poached egg, smoked salmon with Hollandaise sauce.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Salmon Sourdough Toast</span>
+                    <span class="item-price">260.00</span>
+                </div>
+                <div class="item-desc">Smoked Salmon, poached eggs and avo served on sourdough toast.</div>
             </div>
         </div>
 
-        <div class="menu-cta">
-            <p>Hungry for more? View our full 13-page selection including Burgers, Cocktails, and Specialty Brews.</p>
-            <a href="menu.pdf" target="_blank" class="btn-secondary">Open Full PDF Menu</a>
-        </div>
-    </section>
+        <h2 class="section-title">Beverages</h2>
+        
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3 style="margin-top:0;">Hot Drinks</h3>
+                <ul class="drink-list">
+                    <li><span>Cappuccino</span> <span>65.00</span></li>
+                    <li><span>Espresso</span> <span>45.00</span></li>
+                    <li><span>Americano</span> <span>55.00</span></li>
+                    <li><span>Hot Chocolate</span> <span>75.00</span></li>
+                    <li><span>Café Latte</span> <span>65.00</span></li>
+                    <li><span>Macchiato</span> <span>50.00</span></li>
+                    <li><span>Moccachino</span> <span>85.00</span></li>
+                    <li><span>Milo</span> <span>85.00</span></li>
+                    <li><span>Flat White</span> <span>65.00</span></li>
+                    <li><span>French Press</span> <span>80.00</span></li>
+                    <li><span>Red Cappuccino / Latte</span> <span>75.00</span></li>
+                </ul>
+                <p class="item-desc"><strong>Add-ons:</strong> Flavoured Syrups (+35.00), Alternative Milks (Soy/Oat/Almond) (+10.00), Large (+10.00)</p>
+            </div>
 
-    <section id="visit">
-        <h2>Visit Our Garden</h2>
-        <p>Leopards Hill Business Park, Lusaka</p>
-        <p><strong>Open Daily:</strong> 07:30 — 17:00</p>
-        
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3845.8791345474646!2d28.3768469!3d-15.4376378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19408b56955614d7%3A0x2c0db87a993b180e!2sThe%20Zambean%20Coffee%20Co.!5e0!3m2!1sen!2szm!4v1700000000000" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="menu-item">
+                <h3 style="margin-top:0;">Cold Drinks</h3>
+                <ul class="drink-list">
+                    <li><span>Soft Drinks</span> <span>45.00</span></li>
+                    <li><span>Homemade Cordial</span> <span>65.00</span></li>
+                    <li><span>Fruit Juices</span> <span>60.00</span></li>
+                    <li><span>Iced Coffee / Iced Latte</span> <span>95.00</span></li>
+                    <li><span>Rock / Malawi Shandy</span> <span>85.00</span></li>
+                    <li><span>Milkshakes (Choc/Mixed)</span> <span>95.00 / 75.00</span></li>
+                    <li><span>Fruit / Protein Smoothie</span> <span>120.00</span></li>
+                    <li><span>Fresh Orange Juice</span> <span>125.00</span></li>
+                </ul>
+            </div>
         </div>
-        
-        <a href="https://wa.me/260777793007" class="whatsapp-btn" target="_blank">Chat on WhatsApp</a>
-    </section>
+
+        <h2 class="section-title">Lunch Menu</h2>
+        <p class="subtitle">Served 12:00 – 16:30</p>
+
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3 style="margin-top:0;">Burgers</h3>
+                <div class="item-desc">Served with Chips & Salad</div>
+                <hr style="border:0; border-top:1px dotted #ccc; margin: 10px 0;">
+                
+                <div class="menu-header">
+                    <span class="item-name">Beef Burger</span>
+                    <span class="item-price">250.00</span>
+                </div>
+                <div class="item-desc">Beef pattie, tomato, caramelized onions, lettuce and gherkins.</div>
+                <br>
+                <div class="menu-header">
+                    <span class="item-name">Chicken Burger</span>
+                    <span class="item-price">240.00</span>
+                </div>
+                <div class="item-desc">Crispy coated chicken, tomato, gherkins, homemade sweet chilli, avo and lettuce.</div>
+                <br>
+                <div class="menu-header">
+                    <span class="item-name">Halloumi Burger</span>
+                    <span class="item-price">250.00</span>
+                </div>
+                <div class="item-desc">Crispy coated halloumi, homemade sweet chilli sauce, lettuce and avo.</div>
+                <br>
+                <div class="menu-header">
+                    <span class="item-name">Bacon & Blue Cheese Burger</span>
+                    <span class="item-price">270.00</span>
+                </div>
+                <div class="item-desc">Beef pattie, bacon, blue cheese sauce, tomato and lettuce.</div>
+            </div>
+
+            <div class="menu-item">
+                <h3 style="margin-top:0;">Wraps</h3>
+                <div class="item-desc">Served with Chips & Salad</div>
+                <hr style="border:0; border-top:1px dotted #ccc; margin: 10px 0;">
+
+                <div class="menu-header">
+                    <span class="item-name">Halloumi Wrap</span>
+                    <span class="item-price">240.00</span>
+                </div>
+                <div class="item-desc">Halloumi, avo, tomato, lettuce and honey mustard mayo.</div>
+                <br>
+                <div class="menu-header">
+                    <span class="item-name">Chicken & Halloumi</span>
+                    <span class="item-price">250.00</span>
+                </div>
+                <div class="item-desc">Halloumi, crumbed chicken or bacon, lettuce, avo, tomato and honey mustard mayo.</div>
+                <br>
+                <div class="menu-header">
+                    <span class="item-name">Falafel Wrap</span>
+                    <span class="item-price">240.00</span>
+                </div>
+                <div class="item-desc">Falafel, tomato, cucumber, lettuce, tahini yogurt dressing and pickled red onions.</div>
+                <br>
+                <div class="menu-header">
+                    <span class="item-name">Smoked Salmon Wrap</span>
+                    <span class="item-price">270.00</span>
+                </div>
+                <div class="item-desc">Smoked salmon, cream cheese, capers, cucumber, lettuce, avo.</div>
+            </div>
+            
+            <div class="menu-item">
+                <h3 style="margin-top:0;">Mains</h3>
+                <div class="item-desc">Served with Chips & Salad or Mash & Veg</div>
+                <hr style="border:0; border-top:1px dotted #ccc; margin: 10px 0;">
+
+                <div class="menu-header">
+                    <span class="item-name">T-Bone Steak</span>
+                    <span class="item-price">400.00</span>
+                </div>
+                <div class="item-desc">With homemade mushroom sauce.</div>
+                <br>
+                <div class="menu-header">
+                    <span class="item-name">Beef Fillet</span>
+                    <span class="item-price">350.00</span>
+                </div>
+                <div class="item-desc">With pepper sauce.</div>
+                <br>
+                <div class="menu-header">
+                    <span class="item-name">Chicken Schnitzel</span>
+                    <span class="item-price">300.00</span>
+                </div>
+                <div class="item-desc">With cheese sauce.</div>
+                <br>
+                 <div class="menu-header">
+                    <span class="item-name">Chicken Strips</span>
+                    <span class="item-price">320.00</span>
+                </div>
+                <div class="item-desc">With homemade sweet chilli sauce.</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Kiddos Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Chicken Strips & Chips</span>
+                    <span class="item-price">120.00</span>
+                </div>
+                <div class="item-desc">Served with mashed avo.</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Fish Cakes & Chips</span>
+                    <span class="item-price">130.00</span>
+                </div>
+                <div class="item-desc">Served with mushy peas.</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Beef Bolognese</span>
+                    <span class="item-price">140.00</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header">
+                    <span class="item-name">Creamy Mac n Cheese</span>
+                    <span class="item-price">120.00</span>
+                </div>
+                <div class="item-desc">Add bacon bits or peas (+25.00).</div>
+            </div>
+        </div>
+
+    </div>
 
     <footer>
-        <p>© 2026 The Zambean Coffee Co. | Locally Brewed in Zambia</p>
+        <h3>Visit Us</h3>
+        <p>Leopards Hill Business Park, Off Leopards Hill Rd, Lusaka, Zambia</p>
+        <p><em>Ask about our daily specials. Subject to availability.</em></p>
+        
+        <a href="https://www.google.com/maps/place/zambean/data=!4m2!3m1!1s0x19408b56955614d7:0x2c0db87a993b180e?sa=X&ved=1t:242&ictx=111" class="btn">View Map</a>
+        <a href="https://wa.me/260777793007" class="btn">WhatsApp Us</a>
+        
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Zambean Coffee Co.</p>
     </footer>
+
 </body>
 </html>
