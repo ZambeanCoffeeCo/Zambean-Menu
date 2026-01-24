@@ -3,496 +3,484 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zambean Coffee Co.</title>
+    <title>Zambean Coffee Co. | Menu</title>
     <style>
-        /* --- GLOBAL STYLES --- */
+        /* --- IMPORT FONTS --- */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&display=swap');
+
+        /* --- VARIABLES & THEME --- */
         :root {
-            --primary-brown: #4E342E;
-            --accent-green: #558B2F;
-            --bg-cream: #FFF3E0;
-            --text-dark: #212121;
-            --white: #ffffff;
-            --border-color: #D7CCC8;
+            --bg-color: #FDFBF7; /* Creamy White */
+            --text-main: #2C1E1A; /* Dark Espresso */
+            --accent-gold: #C5A065; /* Gold/Latte */
+            --accent-green: #6B8E23; /* Olive/Sage */
+            --card-bg: #ffffff;
+            --shadow: 0 4px 12px rgba(44, 30, 26, 0.08);
+            --font-head: 'Playfair Display', serif;
+            --font-body: 'Raleway', sans-serif;
         }
+
+        /* --- RESET --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-cream);
-            color: var(--text-dark);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
             line-height: 1.6;
+            padding-bottom: 80px; /* Space for fixed footer */
         }
 
-        a { text-decoration: none; color: inherit; }
-
-        /* --- HERO SECTION --- */
-        header {
-            background-color: var(--primary-brown);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-        
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-            font-weight: 300;
-        }
-
-        /* --- CONTACT BANNER --- */
-        .info-bar {
-            background-color: var(--accent-green);
-            color: white;
-            padding: 1rem;
-            text-align: center;
+        /* --- LANDING SECTION (HERO) --- */
+        .landing {
+            height: 100vh;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             justify-content: center;
-            gap: 20px;
-        }
-
-        .info-bar a {
-            font-weight: bold;
-            border-bottom: 1px dashed white;
-        }
-
-        .info-bar a:hover {
-            border-bottom: 1px solid white;
-        }
-
-        /* --- MENU CONTAINER --- */
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        h2.section-title {
+            align-items: center;
+            background: linear-gradient(rgba(44, 30, 26, 0.8), rgba(44, 30, 26, 0.6)), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
             text-align: center;
-            color: var(--primary-brown);
-            border-bottom: 2px solid var(--primary-brown);
-            padding-bottom: 10px;
-            margin-top: 3rem;
+            padding: 20px;
+        }
+
+        .logo-text {
+            font-family: var(--font-head);
+            font-size: 3.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
             text-transform: uppercase;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 10px;
         }
 
-        .subtitle {
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .explore-btn {
+            padding: 15px 40px;
+            background-color: var(--accent-gold);
+            color: var(--text-main);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+
+        .explore-btn:hover {
+            background-color: white;
+            color: var(--text-main);
+        }
+
+        /* --- MENU NAVIGATION (TABS) --- */
+        .menu-nav-container {
+            position: sticky;
+            top: 0;
+            background: var(--bg-color);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .menu-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 15px;
+            min-width: max-content;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid var(--text-main);
+            padding: 8px 16px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-main);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .nav-btn.active, .nav-btn:hover {
+            background-color: var(--text-main);
+            color: white;
+        }
+
+        /* --- MENU CONTENT --- */
+        .menu-section {
+            display: none; /* Hidden by default, JS toggles this */
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .menu-section.active-section {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .category-header {
             text-align: center;
-            font-style: italic;
-            color: #666;
-            margin-bottom: 1.5rem;
+            margin-bottom: 30px;
         }
 
-        /* --- MENU GRID --- */
+        .category-header h2 {
+            font-family: var(--font-head);
+            font-size: 2.5rem;
+            color: var(--text-main);
+        }
+
+        .category-header p {
+            color: var(--accent-green);
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* --- GRID LAYOUT --- */
         .menu-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
 
-        @media (min-width: 600px) {
-            .menu-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
+        /* --- MENU ITEM CARD --- */
         .menu-item {
-            background: var(--white);
-            padding: 1.2rem;
+            background: var(--card-bg);
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--accent-green);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent-gold);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .menu-header {
+        .item-top {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 0.5rem;
-            border-bottom: 1px dotted var(--border-color);
-            padding-bottom: 5px;
+            margin-bottom: 10px;
+            border-bottom: 1px dotted #ddd;
+            padding-bottom: 8px;
         }
 
-        .item-name {
-            font-weight: bold;
+        .item-title {
+            font-family: var(--font-head);
+            font-weight: 700;
             font-size: 1.1rem;
-            color: var(--primary-brown);
         }
 
         .item-price {
             font-weight: bold;
             color: var(--accent-green);
-            white-space: nowrap;
         }
 
         .item-desc {
-            font-size: 0.9rem;
-            color: #555;
+            font-size: 0.95rem;
+            color: #666;
         }
 
-        /* --- SIMPLE LISTS (Drinks) --- */
-        .drink-list {
+        /* --- LIST STYLE (For Drinks) --- */
+        .simple-list {
             list-style: none;
-            padding: 0;
         }
-        
-        .drink-list li {
+        .simple-list li {
             display: flex;
             justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px dotted var(--border-color);
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
         }
 
-        /* --- FOOTER --- */
-        footer {
-            background-color: var(--primary-brown);
+        /* --- FIXED FOOTER (Contact) --- */
+        .fixed-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--text-main);
             color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-green);
+        .footer-link {
             color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
-            margin-top: 10px;
-            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
         }
+        
+        .footer-link:hover { color: var(--accent-gold); }
+
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Zambean Coffee Co.</h1>
-        <p>Leopards Hill Business Park, Lusaka</p>
-    </header>
+    <section class="landing" id="home">
+        <div class="logo-text">Zambean</div>
+        <div class="tagline">Coffee Co. • Lusaka</div>
+        <a href="#menu-container" class="explore-btn" onclick="showCategory('breakfast')">Explore Menu</a>
+    </section>
 
-    <div class="info-bar">
-        <span>🕒 Open Daily: 07:30 - 17:00</span>
-        <a href="https://www.google.com/maps/place/zambean/data=!4m2!3m1!1s0x19408b56955614d7:0x2c0db87a993b180e?sa=X&ved=1t:242&ictx=111" target="_blank">📍 View on Map</a>
-        <a href="https://wa.me/260777793007" target="_blank">💬 WhatsApp Us</a>
+    <div id="menu-container" class="menu-nav-container">
+        <div class="menu-nav">
+            <button class="nav-btn active" onclick="showCategory('breakfast')">Breakfast</button>
+            <button class="nav-btn" onclick="showCategory('lunch')">Lunch</button>
+            <button class="nav-btn" onclick="showCategory('drinks')">Beverages</button>
+            <button class="nav-btn" onclick="showCategory('cakes')">Cakes</button>
+            <button class="nav-btn" onclick="showCategory('kids')">Kiddos</button>
+            <button class="nav-btn" onclick="showCategory('bar')">Bar</button>
+        </div>
     </div>
 
-    <div class="container">
-
-        <h2 class="section-title">Breakfast Menu</h2>
-        <p class="subtitle">Served 07:30 – 12:00</p>
-        
+    <div id="breakfast" class="menu-section active-section">
+        <div class="category-header">
+            <h2>Breakfast</h2>
+            <p>Served 07:30 – 12:00</p>
+        </div>
         <div class="menu-grid">
             <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">The Full English</span>
-                    <span class="item-price">200.00</span>
-                </div>
+                <div class="item-top"><span class="item-title">The Full English</span><span class="item-price">200.00</span></div>
                 <div class="item-desc">Two fried eggs, crispy bacon, fried tomato, pork sausage, baked beans, mushrooms and toast.</div>
             </div>
-
             <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Poached Egg & Avo</span>
-                    <span class="item-price">110.00</span>
-                </div>
-                <div class="item-desc">Mashed avo on toast with a poached egg.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Blue Cheese Toast</span>
-                    <span class="item-price">200.00</span>
-                </div>
+                <div class="item-top"><span class="item-title">Blue Cheese Toast</span><span class="item-price">200.00</span></div>
                 <div class="item-desc">Sliced avo, grilled tomato, fried egg, crumbled blue cheese and crispy bacon on sourdough toast.</div>
             </div>
-
             <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Bacon Scrambled Eggs</span>
-                    <span class="item-price">185.00</span>
-                </div>
-                <div class="item-desc">Creamy scrambled eggs with crispy bacon, mushrooms, avo with fried tomato on a toasted baguette.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Bacon & Egg Roll</span>
-                    <span class="item-price">100.00</span>
-                </div>
-                <div class="item-desc">Two fried eggs in a fresh, lightly toasted sesame bun with crispy bacon.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Granola & Yoghurt</span>
-                    <span class="item-price">135.00</span>
-                </div>
-                <div class="item-desc">Homemade granola with Greek yoghurt with fresh seasonal fruit.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Farmer's Breakfast</span>
-                    <span class="item-price">200.00</span>
-                </div>
+                <div class="item-top"><span class="item-title">Farmer's Breakfast</span><span class="item-price">200.00</span></div>
                 <div class="item-desc">Two fried eggs, fried tomato, sweetcorn fritters, pork sausage and chips.</div>
             </div>
-
-            <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Vegan Breakfast</span>
-                    <span class="item-price">170.00</span>
-                </div>
-                <div class="item-desc">Creamy avo, caramelized onions, fried mushrooms, roasted tomato and baked beans served on a toasted baguette.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Breakfast Croissant</span>
-                    <span class="item-price">185.00</span>
-                </div>
-                <div class="item-desc">Creamy scrambled eggs with crispy bacon, fried tomato on a freshly baked butter croissant.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Salmon Scrambled Eggs</span>
-                    <span class="item-price">260.00</span>
-                </div>
-                <div class="item-desc">Mashed avo on whole wheat toast with a fried egg.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Omelettes</span>
-                    <span class="item-price">135.00</span>
-                </div>
-                <div class="item-desc">Three egg omelette with 3 fillings: mushroom, cheddar, tomato, bacon, feta, jalapeno, ham, onion, avo.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Vanilla French Toast</span>
-                    <span class="item-price">130.00</span>
-                </div>
-                <div class="item-desc">Homemade bread served with crispy bacon, golden syrup and a touch of vanilla.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Breakfast Wrap</span>
-                    <span class="item-price">200.00</span>
-                </div>
-                <div class="item-desc">Scrambled eggs, sausage, roasted tomato and cheddar.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Eggs Benedict</span>
-                    <span class="item-price">195.00</span>
-                </div>
-                <div class="item-desc">English Muffin, poached egg with a choice of ham or bacon served with Hollandaise sauce.</div>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Eggs Royale</span>
-                    <span class="item-price">250.00</span>
-                </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Eggs Royale</span><span class="item-price">250.00</span></div>
                 <div class="item-desc">English Muffin, poached egg, smoked salmon with Hollandaise sauce.</div>
             </div>
-
             <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Salmon Sourdough Toast</span>
-                    <span class="item-price">260.00</span>
-                </div>
-                <div class="item-desc">Smoked Salmon, poached eggs and avo served on sourdough toast.</div>
+                <div class="item-top"><span class="item-title">Salmon Scrambled</span><span class="item-price">260.00</span></div>
+                <div class="item-desc">Mashed avo on whole wheat toast with a fried egg.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Eggs Benedict</span><span class="item-price">195.00</span></div>
+                <div class="item-desc">English Muffin, poached egg with ham or bacon served with Hollandaise sauce.</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Vanilla French Toast</span><span class="item-price">130.00</span></div>
+                <div class="item-desc">Homemade bread served with crispy bacon, golden syrup and a touch of vanilla.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Vegan Breakfast</span><span class="item-price">170.00</span></div>
+                <div class="item-desc">Creamy avo, caramelized onions, fried mushrooms, roasted tomato and baked beans on a toasted baguette.</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Granola & Yoghurt</span><span class="item-price">135.00</span></div>
+                <div class="item-desc">Homemade granola with Greek yoghurt and fresh seasonal fruit.</div>
             </div>
         </div>
+    </div>
 
-        <h2 class="section-title">Beverages</h2>
+    <div id="lunch" class="menu-section">
+        <div class="category-header">
+            <h2>Lunch</h2>
+            <p>Served 12:00 – 16:30</p>
+        </div>
         
+        <h3 style="text-align:center; margin-bottom:20px; font-family:var(--font-head);">Mains & Grills</h3>
         <div class="menu-grid">
             <div class="menu-item">
-                <h3 style="margin-top:0;">Hot Drinks</h3>
-                <ul class="drink-list">
+                <div class="item-top"><span class="item-title">T-Bone Steak</span><span class="item-price">400.00</span></div>
+                <div class="item-desc">Served with Mushroom Sauce, chips & salad.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Beef Fillet</span><span class="item-price">350.00</span></div>
+                <div class="item-desc">Served with Pepper Sauce, chips & salad.</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Chicken Schnitzel</span><span class="item-price">300.00</span></div>
+                <div class="item-desc">With Cheese Sauce.</div>
+            </div>
+        </div>
+
+        <br><hr style="border:0; border-top:1px solid #ddd; margin: 30px 0;"><br>
+
+        <h3 style="text-align:center; margin-bottom:20px; font-family:var(--font-head);">Burgers & Wraps</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Bacon & Blue Burger</span><span class="item-price">270.00</span></div>
+                <div class="item-desc">Beef pattie, bacon, blue cheese sauce, onion, tomato.</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Halloumi Burger</span><span class="item-price">250.00</span></div>
+                <div class="item-desc">Crispy halloumi, sweet chilli, avo.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Chicken & Halloumi Wrap</span><span class="item-price">250.00</span></div>
+                <div class="item-desc">Crumbed chicken/bacon, lettuce, avo, tomato.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Smoked Salmon Wrap</span><span class="item-price">270.00</span></div>
+                <div class="item-desc">Cream cheese, capers, cucumber, lettuce, avo.</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="drinks" class="menu-section">
+        <div class="category-header">
+            <h2>Beverages</h2>
+            <p>Hot & Cold</p>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3 style="margin-bottom:10px; font-family:var(--font-head);">Hot Coffee</h3>
+                <ul class="simple-list">
                     <li><span>Cappuccino</span> <span>65.00</span></li>
-                    <li><span>Espresso</span> <span>45.00</span></li>
                     <li><span>Americano</span> <span>55.00</span></li>
-                    <li><span>Hot Chocolate</span> <span>75.00</span></li>
                     <li><span>Café Latte</span> <span>65.00</span></li>
-                    <li><span>Macchiato</span> <span>50.00</span></li>
-                    <li><span>Moccachino</span> <span>85.00</span></li>
-                    <li><span>Milo</span> <span>85.00</span></li>
                     <li><span>Flat White</span> <span>65.00</span></li>
-                    <li><span>French Press</span> <span>80.00</span></li>
-                    <li><span>Red Cappuccino / Latte</span> <span>75.00</span></li>
+                    <li><span>Espresso</span> <span>45.00</span></li>
+                    <li><span>Red Cappuccino</span> <span>75.00</span></li>
                 </ul>
-                <p class="item-desc"><strong>Add-ons:</strong> Flavoured Syrups (+35.00), Alternative Milks (Soy/Oat/Almond) (+10.00), Large (+10.00)</p>
             </div>
-
-            <div class="menu-item">
-                <h3 style="margin-top:0;">Cold Drinks</h3>
-                <ul class="drink-list">
-                    <li><span>Soft Drinks</span> <span>45.00</span></li>
-                    <li><span>Homemade Cordial</span> <span>65.00</span></li>
-                    <li><span>Fruit Juices</span> <span>60.00</span></li>
-                    <li><span>Iced Coffee / Iced Latte</span> <span>95.00</span></li>
-                    <li><span>Rock / Malawi Shandy</span> <span>85.00</span></li>
-                    <li><span>Milkshakes (Choc/Mixed)</span> <span>95.00 / 75.00</span></li>
-                    <li><span>Fruit / Protein Smoothie</span> <span>120.00</span></li>
+             <div class="menu-item">
+                <h3 style="margin-bottom:10px; font-family:var(--font-head);">Cold & Fresh</h3>
+                <ul class="simple-list">
                     <li><span>Fresh Orange Juice</span> <span>125.00</span></li>
+                    <li><span>Fruit Smoothie</span> <span>120.00</span></li>
+                    <li><span>Iced Coffee</span> <span>95.00</span></li>
+                    <li><span>Milkshakes</span> <span>95.00</span></li>
+                    <li><span>Malawi Shandy</span> <span>85.00</span></li>
+                    <li><span>Homemade Cordial</span> <span>65.00</span></li>
                 </ul>
             </div>
         </div>
+    </div>
 
-        <h2 class="section-title">Lunch Menu</h2>
-        <p class="subtitle">Served 12:00 – 16:30</p>
-
+    <div id="cakes" class="menu-section">
+        <div class="category-header">
+            <h2>Cakes & Bakery</h2>
+            <p>Freshly Baked</p>
+        </div>
         <div class="menu-grid">
             <div class="menu-item">
-                <h3 style="margin-top:0;">Burgers</h3>
-                <div class="item-desc">Served with Chips & Salad</div>
-                <hr style="border:0; border-top:1px dotted #ccc; margin: 10px 0;">
-                
-                <div class="menu-header">
-                    <span class="item-name">Beef Burger</span>
-                    <span class="item-price">250.00</span>
-                </div>
-                <div class="item-desc">Beef pattie, tomato, caramelized onions, lettuce and gherkins.</div>
-                <br>
-                <div class="menu-header">
-                    <span class="item-name">Chicken Burger</span>
-                    <span class="item-price">240.00</span>
-                </div>
-                <div class="item-desc">Crispy coated chicken, tomato, gherkins, homemade sweet chilli, avo and lettuce.</div>
-                <br>
-                <div class="menu-header">
-                    <span class="item-name">Halloumi Burger</span>
-                    <span class="item-price">250.00</span>
-                </div>
-                <div class="item-desc">Crispy coated halloumi, homemade sweet chilli sauce, lettuce and avo.</div>
-                <br>
-                <div class="menu-header">
-                    <span class="item-name">Bacon & Blue Cheese Burger</span>
-                    <span class="item-price">270.00</span>
-                </div>
-                <div class="item-desc">Beef pattie, bacon, blue cheese sauce, tomato and lettuce.</div>
+                <div class="item-top"><span class="item-title">Nutella Croissant</span><span class="item-price">100.00</span></div>
             </div>
-
             <div class="menu-item">
-                <h3 style="margin-top:0;">Wraps</h3>
-                <div class="item-desc">Served with Chips & Salad</div>
-                <hr style="border:0; border-top:1px dotted #ccc; margin: 10px 0;">
-
-                <div class="menu-header">
-                    <span class="item-name">Halloumi Wrap</span>
-                    <span class="item-price">240.00</span>
-                </div>
-                <div class="item-desc">Halloumi, avo, tomato, lettuce and honey mustard mayo.</div>
-                <br>
-                <div class="menu-header">
-                    <span class="item-name">Chicken & Halloumi</span>
-                    <span class="item-price">250.00</span>
-                </div>
-                <div class="item-desc">Halloumi, crumbed chicken or bacon, lettuce, avo, tomato and honey mustard mayo.</div>
-                <br>
-                <div class="menu-header">
-                    <span class="item-name">Falafel Wrap</span>
-                    <span class="item-price">240.00</span>
-                </div>
-                <div class="item-desc">Falafel, tomato, cucumber, lettuce, tahini yogurt dressing and pickled red onions.</div>
-                <br>
-                <div class="menu-header">
-                    <span class="item-name">Smoked Salmon Wrap</span>
-                    <span class="item-price">270.00</span>
-                </div>
-                <div class="item-desc">Smoked salmon, cream cheese, capers, cucumber, lettuce, avo.</div>
+                <div class="item-top"><span class="item-title">Carrot Cake Muffin</span><span class="item-price">95.00</span></div>
             </div>
-            
             <div class="menu-item">
-                <h3 style="margin-top:0;">Mains</h3>
-                <div class="item-desc">Served with Chips & Salad or Mash & Veg</div>
-                <hr style="border:0; border-top:1px dotted #ccc; margin: 10px 0;">
-
-                <div class="menu-header">
-                    <span class="item-name">T-Bone Steak</span>
-                    <span class="item-price">400.00</span>
-                </div>
-                <div class="item-desc">With homemade mushroom sauce.</div>
-                <br>
-                <div class="menu-header">
-                    <span class="item-name">Beef Fillet</span>
-                    <span class="item-price">350.00</span>
-                </div>
-                <div class="item-desc">With pepper sauce.</div>
-                <br>
-                <div class="menu-header">
-                    <span class="item-name">Chicken Schnitzel</span>
-                    <span class="item-price">300.00</span>
-                </div>
-                <div class="item-desc">With cheese sauce.</div>
-                <br>
-                 <div class="menu-header">
-                    <span class="item-name">Chicken Strips</span>
-                    <span class="item-price">320.00</span>
-                </div>
-                <div class="item-desc">With homemade sweet chilli sauce.</div>
+                <div class="item-top"><span class="item-title">Hazelnut Brownie</span><span class="item-price">85.00</span></div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Cinnamon Rolls</span><span class="item-price">85.00</span></div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Plain Butter Croissant</span><span class="item-price">75.00</span></div>
             </div>
         </div>
+    </div>
 
-        <h2 class="section-title">Kiddos Menu</h2>
+    <div id="kids" class="menu-section">
+        <div class="category-header">
+            <h2>Kiddos Menu</h2>
+        </div>
         <div class="menu-grid">
             <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Chicken Strips & Chips</span>
-                    <span class="item-price">120.00</span>
-                </div>
-                <div class="item-desc">Served with mashed avo.</div>
+                <div class="item-top"><span class="item-title">Beef Bolognese</span><span class="item-price">140.00</span></div>
             </div>
             <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Fish Cakes & Chips</span>
-                    <span class="item-price">130.00</span>
-                </div>
+                <div class="item-top"><span class="item-title">Fish Cakes & Chips</span><span class="item-price">130.00</span></div>
                 <div class="item-desc">Served with mushy peas.</div>
             </div>
             <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Beef Bolognese</span>
-                    <span class="item-price">140.00</span>
-                </div>
+                <div class="item-top"><span class="item-title">Chicken Strips & Chips</span><span class="item-price">120.00</span></div>
+                <div class="item-desc">Served with mashed avo.</div>
             </div>
             <div class="menu-item">
-                <div class="menu-header">
-                    <span class="item-name">Creamy Mac n Cheese</span>
-                    <span class="item-price">120.00</span>
-                </div>
-                <div class="item-desc">Add bacon bits or peas (+25.00).</div>
+                <div class="item-top"><span class="item-title">Creamy Mac n Cheese</span><span class="item-price">120.00</span></div>
             </div>
         </div>
-
     </div>
 
-    <footer>
-        <h3>Visit Us</h3>
-        <p>Leopards Hill Business Park, Off Leopards Hill Rd, Lusaka, Zambia</p>
-        <p><em>Ask about our daily specials. Subject to availability.</em></p>
-        
-        <a href="https://www.google.com/maps/place/zambean/data=!4m2!3m1!1s0x19408b56955614d7:0x2c0db87a993b180e?sa=X&ved=1t:242&ictx=111" class="btn">View Map</a>
-        <a href="https://wa.me/260777793007" class="btn">WhatsApp Us</a>
-        
-        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Zambean Coffee Co.</p>
-    </footer>
+    <div id="bar" class="menu-section">
+        <div class="category-header">
+            <h2>Bar Menu</h2>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Aperol Spritz</span><span class="item-price">185.00</span></div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Pimms & Lemonade</span><span class="item-price">175.00</span></div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Mimosa</span><span class="item-price">150.00</span></div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Local Beers</span><span class="item-price">50.00</span></div>
+            </div>
+        </div>
+    </div>
 
+    <div class="fixed-footer">
+        <a href="https://www.google.com/maps/place/zambean/data=!4m2!3m1!1s0x19408b56955614d7:0x2c0db87a993b180e?sa=X&ved=1t:242&ictx=111" target="_blank" class="footer-link">
+            📍 Location
+        </a>
+        <a href="https://wa.me/260777793007" target="_blank" class="footer-link">
+            💬 WhatsApp
+        </a>
+    </div>
+
+    <script>
+        function showCategory(categoryId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.menu-section');
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+            });
+
+            // Remove active class from buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(categoryId).classList.add('active-section');
+
+            // Highlight button (find button by onclick match)
+            const activeBtn = Array.from(buttons).find(b => b.getAttribute('onclick').includes(categoryId));
+            if(activeBtn) activeBtn.classList.add('active');
+
+            // Scroll to menu container if clicking from hero
+            if(window.scrollY < 100) {
+                document.getElementById('menu-container').scrollIntoView();
+            }
+        }
+    </script>
 </body>
 </html>
