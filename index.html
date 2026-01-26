@@ -155,6 +155,17 @@
             margin-top: 5px;
         }
 
+        /* --- SUB-SECTION HEADERS --- */
+        .sub-header {
+            text-align: center;
+            margin: 40px 0 20px 0;
+            font-family: var(--font-head);
+            color: var(--text-main);
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+
         /* --- GRID LAYOUT --- */
         .menu-grid {
             display: grid;
@@ -192,6 +203,7 @@
         .item-price {
             font-weight: bold;
             color: var(--accent-green);
+            white-space: nowrap;
         }
 
         .item-desc {
@@ -208,6 +220,16 @@
             justify-content: space-between;
             padding: 8px 0;
             border-bottom: 1px solid #eee;
+        }
+        
+        /* --- ALLERGY NOTICE --- */
+        .allergy-notice {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #eee;
         }
 
         /* --- FIXED FOOTER (Contact) --- */
@@ -251,18 +273,20 @@
     <div id="menu-container" class="menu-nav-container">
         <div class="menu-nav">
             <button class="nav-btn active" onclick="showCategory('breakfast')">Breakfast</button>
-            <button class="nav-btn" onclick="showCategory('lunch')">Lunch</button>
-            <button class="nav-btn" onclick="showCategory('drinks')">Beverages</button>
-            <button class="nav-btn" onclick="showCategory('cakes')">Cakes</button>
-            <button class="nav-btn" onclick="showCategory('kids')">Kiddos</button>
-            <button class="nav-btn" onclick="showCategory('bar')">Bar</button>
+            <button class="nav-btn" onclick="showCategory('hotdrinks')">Hot Drinks</button>
+            <button class="nav-btn" onclick="showCategory('colddrinks')">Cold Drinks</button>
+            <button class="nav-btn" onclick="showCategory('teas')">Teas</button>
+            <button class="nav-btn" onclick="showCategory('cakes')">Cakes & Croissants</button>
+            <button class="nav-btn" onclick="showCategory('lunch')">Lunch Menu</button>
+            <button class="nav-btn" onclick="showCategory('kids')">Kiddos Menu</button>
+            <button class="nav-btn" onclick="showCategory('bar')">Cocktails & Beer</button>
         </div>
     </div>
 
     <div id="breakfast" class="menu-section active-section">
         <div class="category-header">
-            <h2>Breakfast</h2>
-            <p>Served 07:30 – 12:00</p>
+            <h2>Breakfast Menu</h2>
+            <p>07:30 – 12:00</p>
         </div>
         <div class="menu-grid">
             <div class="menu-item">
@@ -270,136 +294,314 @@
                 <div class="item-desc">Two fried eggs, crispy bacon, fried tomato, pork sausage, baked beans, mushrooms and toast.</div>
             </div>
             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Poached Egg & Avo</span><span class="item-price">110.00</span></div>
+                <div class="item-desc">Mashed avo on a piece toast with a poached egg.</div>
+            </div>
+            <div class="menu-item">
                 <div class="item-top"><span class="item-title">Blue Cheese Toast</span><span class="item-price">200.00</span></div>
                 <div class="item-desc">Sliced avo, grilled tomato, fried egg, crumbled blue cheese and crispy bacon on sourdough toast.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Bacon Scrambled Eggs</span><span class="item-price">185.00</span></div>
+                <div class="item-desc">Creamy scrambled eggs with crispy bacon, mushrooms, avo with fried tomato on a toasted baguette.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Bacon & Egg Roll</span><span class="item-price">100.00</span></div>
+                <div class="item-desc">Two fried eggs in a fresh, lightly toasted sesame bun with crispy bacon.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Granola & Yoghurt</span><span class="item-price">135.00</span></div>
+                <div class="item-desc">Homemade granola with Greek yoghurt with fresh seasonal fruit.</div>
             </div>
             <div class="menu-item">
                 <div class="item-top"><span class="item-title">Farmer's Breakfast</span><span class="item-price">200.00</span></div>
                 <div class="item-desc">Two fried eggs, fried tomato, sweetcorn fritters, pork sausage and chips.</div>
             </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Vegan Breakfast</span><span class="item-price">170.00</span></div>
+                <div class="item-desc">Creamy avo, caramelized onions, fried mushrooms, roasted tomato and baked beans served on a toasted baguette.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Breakfast Croissant</span><span class="item-price">185.00</span></div>
+                <div class="item-desc">Creamy scrambled eggs with crispy bacon fried tomato on a freshly baked butter croissant.</div>
+            </div>
              <div class="menu-item">
+                <div class="item-top"><span class="item-title">Salmon Scrambled Eggs</span><span class="item-price">260.00</span></div>
+                <div class="item-desc">Mashed avo on whole wheat toast with a fried egg.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Omelettes</span><span class="item-price">135.00</span></div>
+                <div class="item-desc">Three egg omelette with three fillings of your choice: mushroom, cheddar, tomato, bacon, feta, jalapeno, ham, onion, avo.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Vanilla French Toast</span><span class="item-price">130.00</span></div>
+                <div class="item-desc">French toast made from our homemade bread served with crispy bacon, golden syrup and a touch of vanilla.</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Breakfast Wrap</span><span class="item-price">200.00</span></div>
+                <div class="item-desc">Scrambled eggs, sausage, roasted tomato and cheddar.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Eggs Benedict</span><span class="item-price">195.00</span></div>
+                <div class="item-desc">English Muffin, poached egg with a choice of ham or bacon served with Hollandaise sauce.</div>
+            </div>
+            <div class="menu-item">
                 <div class="item-top"><span class="item-title">Eggs Royale</span><span class="item-price">250.00</span></div>
                 <div class="item-desc">English Muffin, poached egg, smoked salmon with Hollandaise sauce.</div>
             </div>
             <div class="menu-item">
-                <div class="item-top"><span class="item-title">Salmon Scrambled</span><span class="item-price">260.00</span></div>
-                <div class="item-desc">Mashed avo on whole wheat toast with a fried egg.</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">Eggs Benedict</span><span class="item-price">195.00</span></div>
-                <div class="item-desc">English Muffin, poached egg with ham or bacon served with Hollandaise sauce.</div>
-            </div>
-             <div class="menu-item">
-                <div class="item-top"><span class="item-title">Vanilla French Toast</span><span class="item-price">130.00</span></div>
-                <div class="item-desc">Homemade bread served with crispy bacon, golden syrup and a touch of vanilla.</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">Vegan Breakfast</span><span class="item-price">170.00</span></div>
-                <div class="item-desc">Creamy avo, caramelized onions, fried mushrooms, roasted tomato and baked beans on a toasted baguette.</div>
-            </div>
-             <div class="menu-item">
-                <div class="item-top"><span class="item-title">Granola & Yoghurt</span><span class="item-price">135.00</span></div>
-                <div class="item-desc">Homemade granola with Greek yoghurt and fresh seasonal fruit.</div>
+                <div class="item-top"><span class="item-title">Salmon Sourdough Toast</span><span class="item-price">260.00</span></div>
+                <div class="item-desc">Smoked Salmon, poached eggs and avo served on sourdough toast.</div>
             </div>
         </div>
     </div>
 
-    <div id="lunch" class="menu-section">
+    <div id="hotdrinks" class="menu-section">
         <div class="category-header">
-            <h2>Lunch</h2>
-            <p>Served 12:00 – 16:30</p>
-        </div>
-        
-        <h3 style="text-align:center; margin-bottom:20px; font-family:var(--font-head);">Mains & Grills</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">T-Bone Steak</span><span class="item-price">400.00</span></div>
-                <div class="item-desc">Served with Mushroom Sauce, chips & salad.</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">Beef Fillet</span><span class="item-price">350.00</span></div>
-                <div class="item-desc">Served with Pepper Sauce, chips & salad.</div>
-            </div>
-             <div class="menu-item">
-                <div class="item-top"><span class="item-title">Chicken Schnitzel</span><span class="item-price">300.00</span></div>
-                <div class="item-desc">With Cheese Sauce.</div>
-            </div>
-        </div>
-
-        <br><hr style="border:0; border-top:1px solid #ddd; margin: 30px 0;"><br>
-
-        <h3 style="text-align:center; margin-bottom:20px; font-family:var(--font-head);">Burgers & Wraps</h3>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">Bacon & Blue Burger</span><span class="item-price">270.00</span></div>
-                <div class="item-desc">Beef pattie, bacon, blue cheese sauce, onion, tomato.</div>
-            </div>
-             <div class="menu-item">
-                <div class="item-top"><span class="item-title">Halloumi Burger</span><span class="item-price">250.00</span></div>
-                <div class="item-desc">Crispy halloumi, sweet chilli, avo.</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">Chicken & Halloumi Wrap</span><span class="item-price">250.00</span></div>
-                <div class="item-desc">Crumbed chicken/bacon, lettuce, avo, tomato.</div>
-            </div>
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">Smoked Salmon Wrap</span><span class="item-price">270.00</span></div>
-                <div class="item-desc">Cream cheese, capers, cucumber, lettuce, avo.</div>
-            </div>
-        </div>
-    </div>
-
-    <div id="drinks" class="menu-section">
-        <div class="category-header">
-            <h2>Beverages</h2>
-            <p>Hot & Cold</p>
+            <h2>Hot Drinks</h2>
         </div>
         <div class="menu-grid">
             <div class="menu-item">
-                <h3 style="margin-bottom:10px; font-family:var(--font-head);">Hot Coffee</h3>
                 <ul class="simple-list">
                     <li><span>Cappuccino</span> <span>65.00</span></li>
-                    <li><span>Americano</span> <span>55.00</span></li>
-                    <li><span>Café Latte</span> <span>65.00</span></li>
-                    <li><span>Flat White</span> <span>65.00</span></li>
                     <li><span>Espresso</span> <span>45.00</span></li>
-                    <li><span>Red Cappuccino</span> <span>75.00</span></li>
+                    <li><span>Americano</span> <span>55.00</span></li>
+                    <li><span>Hot Chocolate</span> <span>75.00</span></li>
+                    <li><span>Café Latte</span> <span>65.00</span></li>
+                    <li><span>Macchiato</span> <span>50.00</span></li>
+                    <li><span>Moccachino</span> <span>85.00</span></li>
+                    <li><span>Milo</span> <span>85.00</span></li>
+                    <li><span>Flat White</span> <span>65.00</span></li>
+                    <li><span>French Press</span> <span>80.00</span></li>
+                </ul>
+                <div class="item-desc" style="margin-top:15px; border-top:1px dotted #ccc; padding-top:10px;">
+                    <strong>Add-ons:</strong><br>
+                    Flavored Syrups: +35.00<br>
+                    Alternative milks (Soy/Oat/Almond): +10.00<br>
+                    Large: +10.00
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="colddrinks" class="menu-section">
+        <div class="category-header">
+            <h2>Cold Drinks</h2>
+        </div>
+        <div class="menu-grid">
+             <div class="menu-item">
+                <ul class="simple-list">
+                    <li><span>Soft Drinks</span> <span>45.00</span></li>
+                    <li><span>Homemade Cordial</span> <span>65.00</span></li>
+                    <li><span>Fruit Juices</span> <span>60.00</span></li>
+                    <li><span>Iced Coffee</span> <span>95.00</span></li>
+                    <li><span>Rock Shandy</span> <span>85.00</span></li>
+                    <li><span>Malawi Shandy</span> <span>85.00</span></li>
+                    <li><span>Iced Latte</span> <span>65.00</span></li>
+                    <li><span>Milkshakes</span> <span>95.00</span></li>
+                    <li><span>Chocolate Milk</span> <span>75.00</span></li>
+                    <li><span>Fruit Smoothie</span> <span>120.00</span></li>
+                    <li><span>Protein Smoothie</span> <span>120.00</span></li>
+                    <li><span>Passionfruit Iced Tea</span> <span>80.00</span></li>
+                    <li><span>Tonic Iced Tea</span> <span>95.00</span></li>
+                    <li><span>Fresh Orange</span> <span>125.00</span></li>
                 </ul>
             </div>
-             <div class="menu-item">
-                <h3 style="margin-bottom:10px; font-family:var(--font-head);">Cold & Fresh</h3>
+        </div>
+    </div>
+
+    <div id="teas" class="menu-section">
+        <div class="category-header">
+            <h2>Teas</h2>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
                 <ul class="simple-list">
-                    <li><span>Fresh Orange Juice</span> <span>125.00</span></li>
-                    <li><span>Fruit Smoothie</span> <span>120.00</span></li>
-                    <li><span>Iced Coffee</span> <span>95.00</span></li>
-                    <li><span>Milkshakes</span> <span>95.00</span></li>
-                    <li><span>Malawi Shandy</span> <span>85.00</span></li>
-                    <li><span>Homemade Cordial</span> <span>65.00</span></li>
+                    <li><span>Rooibos Tea</span> <span>45.00</span></li>
+                    <li><span>5 Roses Tea</span> <span>45.00</span></li>
+                    <li><span>Green Tea</span> <span>45.00</span></li>
+                    <li><span>Red Cappuccino</span> <span>75.00</span></li>
+                    <li><span>Red Latte</span> <span>75.00</span></li>
+                    <li><span>Lemon Ginger Water</span> <span>70.00</span></li>
+                    <li><span>Fresh Red</span> <span>70.00</span></li>
+                    <li><span>Mixed Red Berries</span> <span>75.00</span></li>
+                    <li><span>Leaf Teas</span> <span>80.00</span></li>
                 </ul>
+                <div class="item-desc" style="margin-top:10px;">
+                    <strong>Leaf Tea Options:</strong> Darjeeling, English Breakfast, Mint, Hibiscus
+                </div>
             </div>
         </div>
     </div>
 
     <div id="cakes" class="menu-section">
         <div class="category-header">
-            <h2>Cakes & Bakery</h2>
-            <p>Freshly Baked</p>
+            <h2>Cakes & Croissants</h2>
         </div>
         <div class="menu-grid">
             <div class="menu-item">
-                <div class="item-top"><span class="item-title">Nutella Croissant</span><span class="item-price">100.00</span></div>
+                <ul class="simple-list">
+                    <li><span>Carrot Cake Muffin</span> <span>95.00</span></li>
+                    <li><span>Chocolate Brownie</span> <span>75.00</span></li>
+                    <li><span>Hazelnut Brownie</span> <span>85.00</span></li>
+                    <li><span>Banana Choc Chip Muffin</span> <span>80.00</span></li>
+                    <li><span>Blueberry Lemon Muffin</span> <span>75.00</span></li>
+                    <li><span>Date Slice</span> <span>85.00</span></li>
+                    <li><span>Plain Butter Croissant</span> <span>75.00</span></li>
+                    <li><span>Nutella Croissant</span> <span>100.00</span></li>
+                    <li><span>Jam and Cheese Croissant</span> <span>100.00</span></li>
+                    <li><span>Butter and Honey Croissant</span> <span>100.00</span></li>
+                    <li><span>Double Chocolate Muffin</span> <span>85.00</span></li>
+                    <li><span>Cinnamon Rolls</span> <span>85.00</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="lunch" class="menu-section">
+        <div class="category-header">
+            <h2>Lunch Menu</h2>
+            <p>12:00 – 16:30</p>
+        </div>
+
+        <h3 class="sub-header">Wraps (Served with Chips & Salad)</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Halloumi</span><span class="item-price">240.00</span></div>
+                <div class="item-desc">Halloumi, avo, tomato, lettuce and honey mustard mayo.</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Chicken & Halloumi</span><span class="item-price">250.00</span></div>
+                <div class="item-desc">Halloumi, crumbed chicken or bacon, lettuce, avo, tomato and honey mustard mayo.</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Falafel</span><span class="item-price">240.00</span></div>
+                <div class="item-desc">Falafel, tomato, cucumber, lettuce, tahini yogurt dressing and pickled red onions.</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Chicken Caesar</span><span class="item-price">250.00</span></div>
+                <div class="item-desc">Grilled chicken, avo, tomato, lettuce with Caesar dressing.</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Smoked Salmon</span><span class="item-price">270.00</span></div>
+                <div class="item-desc">Smoked salmon, cream cheese, capers, cucumber, lettuce, avo.</div>
+            </div>
+        </div>
+
+        <h3 class="sub-header">Burgers (Served with Chips & Salad)</h3>
+        <div class="menu-grid">
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Beef Burger</span><span class="item-price">250.00</span></div>
+                <div class="item-desc">Beef pattie, tomato, caramelized onions, lettuce and gherkins.</div>
             </div>
             <div class="menu-item">
-                <div class="item-top"><span class="item-title">Carrot Cake Muffin</span><span class="item-price">95.00</span></div>
+                <div class="item-top"><span class="item-title">Chicken Burger</span><span class="item-price">240.00</span></div>
+                <div class="item-desc">Crispy coated chicken, tomato, gherkins, homemade sweet chilli, avo and lettuce.</div>
             </div>
             <div class="menu-item">
-                <div class="item-top"><span class="item-title">Hazelnut Brownie</span><span class="item-price">85.00</span></div>
+                <div class="item-top"><span class="item-title">Halloumi Burger</span><span class="item-price">250.00</span></div>
+                <div class="item-desc">Crispy coated halloumi, homemade sweet chilli sauce, lettuce and avo.</div>
             </div>
             <div class="menu-item">
-                <div class="item-top"><span class="item-title">Cinnamon Rolls</span><span class="item-price">85.00</span></div>
+                <div class="item-top"><span class="item-title">Bacon & Blue Cheese Beef Burger</span><span class="item-price">270.00</span></div>
+                <div class="item-desc">Beef pattie, bacon, blue cheese sauce, tomato and lettuce and pickled red onion.</div>
+            </div>
+        </div>
+
+        <h3 class="sub-header">Toasties (Served with Chips & Salad)</h3>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-top"><span class="item-title">Ham and Cheese</span><span class="item-price">175.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Chicken Mayo</span><span class="item-price">175.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Tuna Mayo</span><span class="item-price">175.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Cheese and Tomato</span><span class="item-price">165.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Mozzarella, Tomato and Pesto</span><span class="item-price">175.00</span></div></div>
+        </div>
+
+        <h3 class="sub-header">Mains (Served with Chips & Salad or Mash & Veg)</h3>
+        <div class="menu-grid">
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">T-Bone Steak</span><span class="item-price">400.00</span></div>
+                <div class="item-desc">with Homemade Mushroom Sauce</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Beef Fillet</span><span class="item-price">350.00</span></div>
+                <div class="item-desc">with Pepper Sauce</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Chicken Schnitzel</span><span class="item-price">300.00</span></div>
+                <div class="item-desc">with Cheese Sauce</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Chicken Strips</span><span class="item-price">320.00</span></div>
+                <div class="item-desc">with Homemade Sweet chilli Sauce</div>
+            </div>
+        </div>
+
+        <h3 class="sub-header">Salads</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Smoked Chicken Salad</span><span class="item-price">195.00</span></div>
+                <div class="item-desc">Sliced smoked chicken, honey mustard dressing, lettuce, feta, pecan nuts, avo, pumpkin and sunflower seeds.</div>
             </div>
             <div class="menu-item">
-                <div class="item-top"><span class="item-title">Plain Butter Croissant</span><span class="item-price">75.00</span></div>
+                <div class="item-top"><span class="item-title">Garden Salad</span><span class="item-price">175.00</span></div>
+                <div class="item-desc">Fresh lettuce, sundried tomatoes, feta, pecan nuts, avo pumpkin and sunflower seeds.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Smoked Salmon Salad</span><span class="item-price">270.00</span></div>
+                <div class="item-desc">Thinly sliced salmon on a bed of fresh lettuce with capers, feta, avo pumpkin and sunflower seeds.</div>
+            </div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Bacon & Avo Salad</span><span class="item-price">190.00</span></div>
+                <div class="item-desc">Fresh Lettuce, crispy bacon, feta, avo pumpkin and sunflower seeds.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Artichoke Salad</span><span class="item-price">250.00</span></div>
+                <div class="item-desc">Artichoke hearts, crispy croutons with parmesan shavings and a creamy Caesar dressing.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Crumbed Chicken Salad</span><span class="item-price">190.00</span></div>
+                <div class="item-desc">Crumbed fried chicken strips with a zesty lemon dressing, feta, fresh lettuce and tomato.</div>
+            </div>
+        </div>
+
+        <h3 class="sub-header">Sandwiches (Served with Chips & Salad)</h3>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Bacon & Avo</span><span class="item-price">180.00</span></div>
+                <div class="item-desc">Lettuce, bacon and avo.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">The Italian</span><span class="item-price">190.00</span></div>
+                <div class="item-desc">Homemade basil pesto, Italian salami, sundried tomatoes and parmesan shavings.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Smoked Salmon</span><span class="item-price">260.00</span></div>
+                <div class="item-desc">Smoked salmon, smooth cream cheese, capers and avo.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Vegetarian</span><span class="item-price">180.00</span></div>
+                <div class="item-desc">Lettuce, homemade basil pesto, sundried tomatoes and avo.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Club</span><span class="item-price">185.00</span></div>
+                <div class="item-desc">Grilled chicken, crispy bacon, lettuce, tomato and honey Dijon mayo.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Grilled Chicken & Pesto</span><span class="item-price">185.00</span></div>
+                <div class="item-desc">Grilled chicken tossed in yogurt and pesto sauce with tomato, mozzarella and lettuce.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Smoked Chicken</span><span class="item-price">185.00</span></div>
+                <div class="item-desc">Smoked chicken, lettuce, honey wholegrain mustard, pecan nuts and avo.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Gourmet BLT</span><span class="item-price">195.00</span></div>
+                <div class="item-desc">Crispy bacon, lettuce, tomato and homemade lemon mayo.</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Crumbed Chicken</span><span class="item-price">185.00</span></div>
+                <div class="item-desc">Crumbed fried chicken strips, tomato.</div>
             </div>
         </div>
     </div>
@@ -410,40 +612,57 @@
         </div>
         <div class="menu-grid">
             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Chicken strips and chips</span><span class="item-price">120.00</span></div>
+                <div class="item-desc">served with mashed avo</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-top"><span class="item-title">Fish cakes and chips</span><span class="item-price">130.00</span></div>
+                <div class="item-desc">served with mushy peas</div>
+            </div>
+            <div class="menu-item">
                 <div class="item-top"><span class="item-title">Beef Bolognese</span><span class="item-price">140.00</span></div>
             </div>
             <div class="menu-item">
-                <div class="item-top"><span class="item-title">Fish Cakes & Chips</span><span class="item-price">130.00</span></div>
-                <div class="item-desc">Served with mushy peas.</div>
+                <div class="item-top"><span class="item-title">Creamy Mac n cheese</span><span class="item-price">120.00</span></div>
+                <div class="item-desc">-add bacon bits or peas: +25.00</div>
             </div>
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">Chicken Strips & Chips</span><span class="item-price">120.00</span></div>
-                <div class="item-desc">Served with mashed avo.</div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Full Portion of Chips</span><span class="item-price">95.00</span></div>
             </div>
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">Creamy Mac n Cheese</span><span class="item-price">120.00</span></div>
+             <div class="menu-item">
+                <div class="item-top"><span class="item-title">Half Portion of Chips</span><span class="item-price">75.00</span></div>
             </div>
         </div>
     </div>
 
     <div id="bar" class="menu-section">
         <div class="category-header">
-            <h2>Bar Menu</h2>
+            <h2>Cocktails, Wine & Beer</h2>
         </div>
+        
+        <h3 class="sub-header">Cocktails</h3>
         <div class="menu-grid">
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">Aperol Spritz</span><span class="item-price">185.00</span></div>
-            </div>
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">Pimms & Lemonade</span><span class="item-price">175.00</span></div>
-            </div>
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">Mimosa</span><span class="item-price">150.00</span></div>
-            </div>
-            <div class="menu-item">
-                <div class="item-top"><span class="item-title">Local Beers</span><span class="item-price">50.00</span></div>
-            </div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Aperol spritz</span><span class="item-price">185.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Dom Pedro</span><span class="item-price">185.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Mimosa</span><span class="item-price">150.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Pimms & Lemonade</span><span class="item-price">175.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Irish Coffee</span><span class="item-price">185.00</span></div></div>
         </div>
+
+        <h3 class="sub-header">Wine & Beer</h3>
+        <div class="menu-grid">
+            <div class="menu-item"><div class="item-top"><span class="item-title">Sauvignon Blanc</span><span class="item-price">120.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Rosé</span><span class="item-price">120.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Cabernet Sauvignon</span><span class="item-price">120.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Local Beers</span><span class="item-price">50.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Imported Beers</span><span class="item-price">70.00</span></div></div>
+            <div class="menu-item"><div class="item-top"><span class="item-title">Ciders</span><span class="item-price">70.00</span></div></div>
+        </div>
+    </div>
+    
+    <div class="allergy-notice">
+        PLEASE LET US KNOW IF YOU HAVE ANY ALLERGIES. <br>
+        SUBJECT TO AVAILABILITY. ASK ABOUT OUR DAILY SPECIALS.
     </div>
 
     <div class="fixed-footer">
@@ -457,26 +676,21 @@
 
     <script>
         function showCategory(categoryId) {
-            // Hide all sections
             const sections = document.querySelectorAll('.menu-section');
             sections.forEach(section => {
                 section.classList.remove('active-section');
             });
 
-            // Remove active class from buttons
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('active');
             });
 
-            // Show selected section
             document.getElementById(categoryId).classList.add('active-section');
 
-            // Highlight button (find button by onclick match)
             const activeBtn = Array.from(buttons).find(b => b.getAttribute('onclick').includes(categoryId));
             if(activeBtn) activeBtn.classList.add('active');
 
-            // Scroll to menu container if clicking from hero
             if(window.scrollY < 100) {
                 document.getElementById('menu-container').scrollIntoView();
             }
