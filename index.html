@@ -47,12 +47,16 @@
             padding: 20px;
         }
 
-        /* --- LOGO STYLE (New) --- */
+        /* --- LOGO STYLE (OPTION 2: GOLD BADGE) --- */
         .logo-img {
-            max-width: 180px;  /* Adjusts the size of the logo */
+            max-width: 180px;
             height: auto;
             margin-bottom: 15px;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); /* Adds a subtle pop */
+            /* Forces a perfect circle */
+            border-radius: 50%; 
+            /* Adds a gold rim */
+            border: 3px solid var(--accent-gold); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .logo-text {
