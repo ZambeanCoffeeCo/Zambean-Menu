@@ -47,6 +47,14 @@
             padding: 20px;
         }
 
+        /* --- LOGO STYLE (New) --- */
+        .logo-img {
+            max-width: 180px;  /* Adjusts the size of the logo */
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); /* Adds a subtle pop */
+        }
+
         .logo-text {
             font-family: var(--font-head);
             font-size: 3.5rem;
@@ -76,32 +84,11 @@
             transition: all 0.3s ease;
             text-decoration: none;
             border-radius: 2px;
-            display: inline-block;
         }
 
         .explore-btn:hover {
             background-color: white;
             color: var(--text-main);
-        }
-
-        /* --- MUSIC CONTROL --- */
-        .music-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 2000;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: 1px solid var(--accent-gold);
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
         }
 
         /* --- MENU NAVIGATION (TABS) --- */
@@ -285,18 +272,12 @@
 </head>
 <body>
 
-    <audio id="bg-music" loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
-
-    <div class="music-toggle" onclick="toggleMusic()" title="Play/Pause Music">
-        🎵
-    </div>
-
     <section class="landing" id="home">
+        <img src="logo.png" alt="Zambean Coffee Co. Logo" class="logo-img">
+        
         <div class="logo-text">Zambean</div>
         <div class="tagline">Coffee Co. • Lusaka</div>
-        <a href="#menu-container" class="explore-btn" onclick="startExperience('breakfast')">Explore Menu</a>
+        <a href="#menu-container" class="explore-btn" onclick="showCategory('breakfast')">Explore Menu</a>
     </section>
 
     <div id="menu-container" class="menu-nav-container">
@@ -704,53 +685,22 @@
     </div>
 
     <script>
-        // --- AUDIO CONTROLLER ---
-        const audio = document.getElementById('bg-music');
-        let isPlaying = false;
-
-        function startExperience(categoryId) {
-            // 1. Try to play music
-            toggleMusic(true);
-            
-            // 2. Proceed to show the menu
-            showCategory(categoryId);
-        }
-
-        function toggleMusic(forcePlay = false) {
-            if (forcePlay || !isPlaying) {
-                audio.play().then(() => {
-                    isPlaying = true;
-                }).catch(error => {
-                    console.log("Autoplay prevented by browser: User must interact first.");
-                });
-            } else {
-                audio.pause();
-                isPlaying = false;
-            }
-        }
-
-        // --- MENU CONTROLLER ---
         function showCategory(categoryId) {
-            // Hide all sections
             const sections = document.querySelectorAll('.menu-section');
             sections.forEach(section => {
                 section.classList.remove('active-section');
             });
 
-            // Remove active class from buttons
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('active');
             });
 
-            // Show selected section
             document.getElementById(categoryId).classList.add('active-section');
 
-            // Highlight button
             const activeBtn = Array.from(buttons).find(b => b.getAttribute('onclick').includes(categoryId));
             if(activeBtn) activeBtn.classList.add('active');
 
-            // Scroll to menu container
             if(window.scrollY < 100) {
                 document.getElementById('menu-container').scrollIntoView();
             }
