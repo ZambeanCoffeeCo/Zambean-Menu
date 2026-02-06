@@ -132,6 +132,16 @@
             color: white;
         }
 
+        /* Special styling for the WhatsApp Specials button to make it stand out slightly */
+        .nav-btn.special-btn {
+            border-color: var(--accent-gold);
+            color: var(--text-main);
+        }
+        .nav-btn.special-btn:hover {
+            background-color: var(--accent-gold);
+            color: white;
+        }
+
         /* --- MENU CONTENT --- */
         .menu-section {
             display: none; /* Hidden by default, JS toggles this */
@@ -294,6 +304,7 @@
             <button class="nav-btn" onclick="showCategory('lunch')">Lunch Menu</button>
             <button class="nav-btn" onclick="showCategory('kids')">Kiddos Menu</button>
             <button class="nav-btn" onclick="showCategory('bar')">Cocktails & Beer</button>
+            <button class="nav-btn special-btn" onclick="window.open('https://wa.me/260777793007?text=Join%20to%20view%20our%20specials', '_blank')">★ Specials</button>
         </div>
     </div>
 
@@ -406,18 +417,16 @@
              <div class="menu-item">
                 <ul class="simple-list">
                     <li><span>Soft Drinks</span> <span>45.00</span></li>
-                    <li><span>Homemade Cordial</span> <span>65.00</span></li>
+                    <li><span>Homemade Passion Fruit</span> <span>65.00</span></li>
                     <li><span>Fruit Juices</span> <span>60.00</span></li>
                     <li><span>Iced Coffee</span> <span>95.00</span></li>
                     <li><span>Rock Shandy</span> <span>85.00</span></li>
                     <li><span>Malawi Shandy</span> <span>85.00</span></li>
                     <li><span>Iced Latte</span> <span>65.00</span></li>
                     <li><span>Milkshakes</span> <span>95.00</span></li>
-                    <li><span>Chocolate Milk</span> <span>75.00</span></li>
                     <li><span>Fruit Smoothie</span> <span>120.00</span></li>
                     <li><span>Protein Smoothie</span> <span>120.00</span></li>
-                    <li><span>Passionfruit Iced Tea</span> <span>80.00</span></li>
-                    <li><span>Tonic Iced Tea</span> <span>95.00</span></li>
+                    <li><span>Passion Fruit & Tonic</span> <span>80.00</span></li>
                     <li><span>Fresh Orange</span> <span>125.00</span></li>
                 </ul>
             </div>
@@ -697,12 +706,15 @@
 
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => {
-                btn.classList.remove('active');
+                // Don't remove styling from the Specials button as it's separate
+                if(!btn.classList.contains('special-btn')) {
+                    btn.classList.remove('active');
+                }
             });
 
             document.getElementById(categoryId).classList.add('active-section');
 
-            const activeBtn = Array.from(buttons).find(b => b.getAttribute('onclick').includes(categoryId));
+            const activeBtn = Array.from(buttons).find(b => b.getAttribute('onclick') && b.getAttribute('onclick').includes(categoryId));
             if(activeBtn) activeBtn.classList.add('active');
 
             if(window.scrollY < 100) {
