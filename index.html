@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zambean Coffee Co. | Menu</title>
+    <title>Zambean Coffee Co.</title>
     <style>
         /* --- IMPORT FONTS --- */
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&display=swap');
@@ -291,27 +291,26 @@
         
         <div class="logo-text">Zambean</div>
         <div class="tagline">Coffee Co. • Lusaka</div>
-        <a href="#menu-container" class="explore-btn" onclick="showCategory('breakfast')">Explore Menu</a>
+        <a href="#menu-container" class="explore-btn" onclick="showCategory('breakfast')">Explore</a>
     </section>
 
     <div id="menu-container" class="menu-nav-container">
         <div class="menu-nav">
-            <button class="nav-btn active" onclick="showCategory('breakfast')">Breakfast</button>
-            <button class="nav-btn" onclick="showCategory('hotdrinks')">Hot Drinks</button>
-            <button class="nav-btn" onclick="showCategory('colddrinks')">Cold Drinks</button>
-            <button class="nav-btn" onclick="showCategory('teas')">Teas</button>
-            <button class="nav-btn" onclick="showCategory('cakes')">Cakes & Croissants</button>
-            <button class="nav-btn" onclick="showCategory('lunch')">Lunch Menu</button>
-            <button class="nav-btn" onclick="showCategory('kids')">Kiddos Menu</button>
-            <button class="nav-btn" onclick="showCategory('bar')">Cocktails & Beer</button>
-            
             <button class="nav-btn special-btn" onclick="window.open('https://whatsapp.com/channel/0029VbCOIVjC6ZvooqNpK80d', '_blank')">★ Specials</button>
+            <button class="nav-btn active" onclick="showCategory('breakfast')">Breakfast</button>
+            <button class="nav-btn" onclick="showCategory('lunch')">Lunch</button>
+            <button class="nav-btn" onclick="showCategory('kids')">Kiddos</button>
+            <button class="nav-btn" onclick="showCategory('cakes')">Cakes and Croissants</button>
+            <button class="nav-btn" onclick="showCategory('hotdrinks')">Hot Drinks</button>
+            <button class="nav-btn" onclick="showCategory('teas')">Teas</button>
+            <button class="nav-btn" onclick="showCategory('colddrinks')">Cold Drinks</button>
+            <button class="nav-btn" onclick="showCategory('bar')">Cocktails and Beers</button>
         </div>
     </div>
 
     <div id="breakfast" class="menu-section active-section">
         <div class="category-header">
-            <h2>Breakfast Menu</h2>
+            <h2>Breakfast</h2>
             <p>07:30 – 12:00</p>
         </div>
         <div class="menu-grid">
@@ -382,109 +381,9 @@
         </div>
     </div>
 
-    <div id="hotdrinks" class="menu-section">
-        <div class="category-header">
-            <h2>Hot Drinks</h2>
-        </div>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <ul class="simple-list">
-                    <li><span>Cappuccino</span> <span>65.00</span></li>
-                    <li><span>Espresso</span> <span>45.00</span></li>
-                    <li><span>Americano</span> <span>55.00</span></li>
-                    <li><span>Hot Chocolate</span> <span>75.00</span></li>
-                    <li><span>Café Latte</span> <span>65.00</span></li>
-                    <li><span>Macchiato</span> <span>50.00</span></li>
-                    <li><span>Moccachino</span> <span>85.00</span></li>
-                    <li><span>Milo</span> <span>85.00</span></li>
-                    <li><span>Flat White</span> <span>65.00</span></li>
-                    <li><span>French Press</span> <span>80.00</span></li>
-                </ul>
-                <div class="item-desc" style="margin-top:15px; border-top:1px dotted #ccc; padding-top:10px;">
-                    <strong>Add-ons:</strong><br>
-                    Flavored Syrups: +35.00<br>
-                    Alternative milks (Soy/Oat/Almond): +10.00<br>
-                    Large: +10.00
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="colddrinks" class="menu-section">
-        <div class="category-header">
-            <h2>Cold Drinks</h2>
-        </div>
-        <div class="menu-grid">
-             <div class="menu-item">
-                <ul class="simple-list">
-                    <li><span>Soft Drinks</span> <span>45.00</span></li>
-                    <li><span>Homemade Passion Fruit</span> <span>65.00</span></li>
-                    <li><span>Fruit Juices</span> <span>60.00</span></li>
-                    <li><span>Iced Coffee</span> <span>95.00</span></li>
-                    <li><span>Rock Shandy</span> <span>85.00</span></li>
-                    <li><span>Malawi Shandy</span> <span>85.00</span></li>
-                    <li><span>Iced Latte</span> <span>65.00</span></li>
-                    <li><span>Milkshakes</span> <span>95.00</span></li>
-                    <li><span>Fruit Smoothie</span> <span>120.00</span></li>
-                    <li><span>Protein Smoothie</span> <span>120.00</span></li>
-                    <li><span>Passion Fruit & Tonic</span> <span>80.00</span></li>
-                    <li><span>Fresh Orange</span> <span>125.00</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div id="teas" class="menu-section">
-        <div class="category-header">
-            <h2>Teas</h2>
-        </div>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <ul class="simple-list">
-                    <li><span>Rooibos Tea</span> <span>45.00</span></li>
-                    <li><span>5 Roses Tea</span> <span>45.00</span></li>
-                    <li><span>Green Tea</span> <span>45.00</span></li>
-                    <li><span>Red Cappuccino</span> <span>75.00</span></li>
-                    <li><span>Red Latte</span> <span>75.00</span></li>
-                    <li><span>Lemon Ginger Water</span> <span>70.00</span></li>
-                    <li><span>Fresh Red</span> <span>70.00</span></li>
-                    <li><span>Mixed Red Berries</span> <span>75.00</span></li>
-                    <li><span>Leaf Teas</span> <span>80.00</span></li>
-                </ul>
-                <div class="item-desc" style="margin-top:10px;">
-                    <strong>Leaf Tea Options:</strong> Darjeeling, English Breakfast, Mint, Hibiscus
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="cakes" class="menu-section">
-        <div class="category-header">
-            <h2>Cakes & Croissants</h2>
-        </div>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <ul class="simple-list">
-                    <li><span>Carrot Cake Muffin</span> <span>95.00</span></li>
-                    <li><span>Chocolate Brownie</span> <span>75.00</span></li>
-                    <li><span>Hazelnut Brownie</span> <span>85.00</span></li>
-                    <li><span>Banana Choc Chip Muffin</span> <span>80.00</span></li>
-                    <li><span>Blueberry Lemon Muffin</span> <span>75.00</span></li>
-                    <li><span>Date Slice</span> <span>85.00</span></li>
-                    <li><span>Plain Butter Croissant</span> <span>85.00</span></li>
-                    <li><span>Nutella Croissant</span> <span>100.00</span></li>
-                    <li><span>Jam and Cheese Croissant</span> <span>100.00</span></li>
-                    <li><span>Butter and Honey Croissant</span> <span>100.00</span></li>
-                    <li><span>Double Chocolate Muffin</span> <span>85.00</span></li>
-                    <li><span>Cinnamon Rolls</span> <span>85.00</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
     <div id="lunch" class="menu-section">
         <div class="category-header">
-            <h2>Lunch Menu</h2>
+            <h2>Lunch</h2>
             <p>12:00 – 16:30</p>
         </div>
 
@@ -632,7 +531,7 @@
 
     <div id="kids" class="menu-section">
         <div class="category-header">
-            <h2>Kiddos Menu</h2>
+            <h2>Kiddos</h2>
         </div>
         <div class="menu-grid">
             <div class="menu-item">
@@ -659,9 +558,109 @@
         </div>
     </div>
 
+    <div id="cakes" class="menu-section">
+        <div class="category-header">
+            <h2>Cakes and Croissants</h2>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <ul class="simple-list">
+                    <li><span>Carrot Cake Muffin</span> <span>95.00</span></li>
+                    <li><span>Chocolate Brownie</span> <span>75.00</span></li>
+                    <li><span>Hazelnut Brownie</span> <span>85.00</span></li>
+                    <li><span>Banana Choc Chip Muffin</span> <span>80.00</span></li>
+                    <li><span>Blueberry Lemon Muffin</span> <span>75.00</span></li>
+                    <li><span>Date Slice</span> <span>85.00</span></li>
+                    <li><span>Plain Butter Croissant</span> <span>85.00</span></li>
+                    <li><span>Nutella Croissant</span> <span>100.00</span></li>
+                    <li><span>Jam and Cheese Croissant</span> <span>100.00</span></li>
+                    <li><span>Butter and Honey Croissant</span> <span>100.00</span></li>
+                    <li><span>Double Chocolate Muffin</span> <span>85.00</span></li>
+                    <li><span>Cinnamon Rolls</span> <span>85.00</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="hotdrinks" class="menu-section">
+        <div class="category-header">
+            <h2>Hot Drinks</h2>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <ul class="simple-list">
+                    <li><span>Cappuccino</span> <span>65.00</span></li>
+                    <li><span>Espresso</span> <span>45.00</span></li>
+                    <li><span>Americano</span> <span>55.00</span></li>
+                    <li><span>Hot Chocolate</span> <span>75.00</span></li>
+                    <li><span>Café Latte</span> <span>65.00</span></li>
+                    <li><span>Macchiato</span> <span>50.00</span></li>
+                    <li><span>Moccachino</span> <span>85.00</span></li>
+                    <li><span>Milo</span> <span>85.00</span></li>
+                    <li><span>Flat White</span> <span>65.00</span></li>
+                    <li><span>French Press</span> <span>80.00</span></li>
+                </ul>
+                <div class="item-desc" style="margin-top:15px; border-top:1px dotted #ccc; padding-top:10px;">
+                    <strong>Add-ons:</strong><br>
+                    Flavored Syrups: +35.00<br>
+                    Alternative milks (Soy/Oat/Almond): +10.00<br>
+                    Large: +10.00
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="teas" class="menu-section">
+        <div class="category-header">
+            <h2>Teas</h2>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <ul class="simple-list">
+                    <li><span>Rooibos Tea</span> <span>45.00</span></li>
+                    <li><span>5 Roses Tea</span> <span>45.00</span></li>
+                    <li><span>Green Tea</span> <span>45.00</span></li>
+                    <li><span>Red Cappuccino</span> <span>75.00</span></li>
+                    <li><span>Red Latte</span> <span>75.00</span></li>
+                    <li><span>Lemon Ginger Water</span> <span>70.00</span></li>
+                    <li><span>Fresh Red</span> <span>70.00</span></li>
+                    <li><span>Mixed Red Berries</span> <span>75.00</span></li>
+                    <li><span>Leaf Teas</span> <span>80.00</span></li>
+                </ul>
+                <div class="item-desc" style="margin-top:10px;">
+                    <strong>Leaf Tea Options:</strong> Darjeeling, English Breakfast, Mint, Hibiscus
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="colddrinks" class="menu-section">
+        <div class="category-header">
+            <h2>Cold Drinks</h2>
+        </div>
+        <div class="menu-grid">
+             <div class="menu-item">
+                <ul class="simple-list">
+                    <li><span>Soft Drinks</span> <span>45.00</span></li>
+                    <li><span>Homemade Passion Fruit</span> <span>65.00</span></li>
+                    <li><span>Fruit Juices</span> <span>60.00</span></li>
+                    <li><span>Iced Coffee</span> <span>95.00</span></li>
+                    <li><span>Rock Shandy</span> <span>85.00</span></li>
+                    <li><span>Malawi Shandy</span> <span>85.00</span></li>
+                    <li><span>Iced Latte</span> <span>65.00</span></li>
+                    <li><span>Milkshakes</span> <span>95.00</span></li>
+                    <li><span>Fruit Smoothie</span> <span>120.00</span></li>
+                    <li><span>Protein Smoothie</span> <span>120.00</span></li>
+                    <li><span>Passion Fruit & Tonic</span> <span>80.00</span></li>
+                    <li><span>Fresh Orange</span> <span>125.00</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <div id="bar" class="menu-section">
         <div class="category-header">
-            <h2>Cocktails, Wine & Beer</h2>
+            <h2>Cocktails and Beers</h2>
         </div>
         
         <h3 class="sub-header">Cocktails</h3>
